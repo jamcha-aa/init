@@ -553,6 +553,7 @@
                 "~/.emacs.d/conf"
                 ) load-path))
 (load "org-feed")
+(load "org-license")
 
 ;; eww function
 ;(setq browse-url-browser-function 'eww-browse-url)
