@@ -552,8 +552,8 @@
       (append '(
                 "~/.emacs.d/conf"
                 ) load-path))
-(load "org-feed")
-(load "org-license")
+
+(load "org-feeds")
 
 ;; eww function
 ;(setq browse-url-browser-function 'eww-browse-url)
@@ -567,3 +567,7 @@
 ;; org-markdown
 (eval-after-load "org"
   '(require 'ox-md nil t))
+
+;; org-license
+(add-to-list 'load-path "~/.emacs.d/elisp")
+(load "org-license")
