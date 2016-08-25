@@ -556,7 +556,7 @@
 (load "org-feeds")
 
 ;; eww function
-;(setq browse-url-browser-function 'eww-browse-url)
+(setq browse-url-browser-function 'eww-browse-url)
 
 ;; navi2ch
 (setq navi2ch-net-http-proxy "localhost:8080")
@@ -571,3 +571,8 @@
 ;; org-license
 (add-to-list 'load-path "~/.emacs.d/elisp")
 (load "org-license")
+
+;; emms
+(require 'emms-setup)
+(emms-standard)
+(emms-default-players)
