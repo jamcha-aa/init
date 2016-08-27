@@ -35,7 +35,8 @@
 ;; ツールチップ表示フォント
 ;(set-face-attribute 'tooltip nil :family "Myrica M" :height 110)
 
-(add-to-list 'default-frame-alist '(font . "Rounded\-X Mgen+ 1c heavy-18"))
+(add-to-list 'default-frame-alist '(font . "源ノ角ゴシック Heavy-18"))
+;(add-to-list 'default-frame-alist '(font . "Rounded\-X Mgen+ 1c heavy-18"))
 
 ;; 初期画面の非表示
 (setq inhibit-startup-message nil)
@@ -521,22 +522,22 @@
 (setq YaTeX-latex-message-code 'utf-8)
 
 ;; org lighter
-(setq jit-lock-context-time 5.0)
-(setq jit-lock-defer-time 1.0)
-;(setq jit-lock-stealth-time ;5.0
+;(setq jit-lock-context-time 5.0)
+;(setq jit-lock-defer-time 1.0)
+;;(setq jit-lock-stealth-time ;5.0
                                         ;20.0)
-(setq jit-lock-stealth-time 20.0)
-(setq jit-lock-stealth-verbose nil)
-(setq jit-lock-stealth-nice 0.5)
-;(setq jit-lock-stealth-load ;50
+;(setq jit-lock-stealth-time 20.0)
+;(setq jit-lock-stealth-verbose nil)
+;(setq jit-lock-stealth-nice 0.5)
+;;(setq jit-lock-stealth-load ;50
 ;300)
-;(setq jit-lock-chunk-size ;100
+;;(setq jit-lock-chunk-size ;100
 ;20)
-(setq jit-lock-stealth-load 300)
-(setq jit-lock-chunk-size 20)
+;(setq jit-lock-stealth-load 300)
+;(setq jit-lock-chunk-size 20)
 
 
-(setq font-lock-maximum-decoration '((c-mode . 1) (c++-mode . 1)(org-mode . 1)))
+;(setq font-lock-maximum-decoration '((c-mode . 1) (c++-mode . 1)(org-mode . 1)))
 
 ;; wl
 ;(require 'mime-setup)
@@ -546,14 +547,6 @@
 ;; twittering-mode
 (require 'twittering-mode)
 (setq twittering-use-master-password t)
-
-;; org feed
-(setq load-path
-      (append '(
-                "~/.emacs.d/conf"
-                ) load-path))
-
-(load "org-feeds")
 
 ;; eww function
 (setq browse-url-browser-function 'eww-browse-url)
@@ -576,3 +569,18 @@
 (require 'emms-setup)
 (emms-standard)
 (emms-default-players)
+
+;; org-octopress
+;(require 'org-octopress)
+
+;; mew
+(load "mew")
+
+;; conf el
+(setq load-path
+      (append '(
+                "~/.emacs.d/conf"
+                ) load-path))
+
+(load "org-feeds")
+(load "mewconf")
