@@ -35,8 +35,9 @@
 ;; ツールチップ表示フォント
 ;(set-face-attribute 'tooltip nil :family "Myrica M" :height 110)
 
-(add-to-list 'default-frame-alist '(font . "源ノ角ゴシック Heavy-18"))
+(add-to-list 'default-frame-alist '(font . "源ノ角ゴシック Heavy-16"))
 ;(add-to-list 'default-frame-alist '(font . "Rounded\-X Mgen+ 1c heavy-18"))
+;(add-to-list 'default-frame-alist '(font . "Myrica M-16"))
 
 ;; 初期画面の非表示
 (setq inhibit-startup-message nil)
@@ -414,6 +415,7 @@
 ;; skk sticky-key
 (setq skk-sticky-key ";")
 
+
 ;; skk kutouten
 (setq-default skk-kutouten-type 'jp-en)
 
@@ -581,6 +583,7 @@
       (append '(
                 "~/.emacs.d/conf"
                 ) load-path))
+
 
 (load "org-feeds")
 (load "mewconf")
