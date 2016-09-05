@@ -403,6 +403,7 @@
 (setq eww-search-prefix "https://www.google.co.jp/search?q=")
 
 ;; skk
+;; sudo apt install ddskk skkdic
 (require 'skk-auto)
 (global-set-key (kbd "C-x C-j") 'skk-mode)
 
@@ -415,9 +416,14 @@
 ;; skk sticky-key
 (setq skk-sticky-key ";")
 
-
 ;; skk kutouten
 (setq-default skk-kutouten-type 'jp-en)
+
+;; mozc
+;; sudo apt install emacs-mozc emacs-mozc-bin
+;(require 'mozc)
+;(set-language-environment "Japanese")
+;(setq default-input-method "japanese-mozc")
 
 ;; org-mode & org-capture
 ;; (save-window-excursion (shell-command (format "emacs-test -l test-minimum -l %s %s &" buffer-file-name buffer-file-name)))
