@@ -507,17 +507,6 @@
 (hiwin-activate)                           ;; hiwin-modeを有効化
 (set-face-background 'hiwin-face "#eee8d5") ;; 非アクティブウィンドウの背景色を設定
 
-;; helm
-(setq dired-bind-jump nil) ;;skkとの競合を回避する
-(require 'helm-config)
-(helm-mode 1)
-
-;; ミニバッファでC-hをバックスペースに割り当て
-(define-key helm-read-file-map (kbd "C-h") 'delete-backward-char)
-
-;; TABで補完
-(define-key helm-read-file-map (kbd "<tab>") 'helm-execute-persistent-action)
-
 ;; カーソルの点滅を止める
 (blink-cursor-mode 0)
 
@@ -590,6 +579,18 @@
                 "~/.emacs.d/conf"
                 ) load-path))
 
-
+;; conf files
 (load "org-feeds")
 (load "mewconf")
+
+;; helm
+(setq dired-bind-jump nil) ;;skkとの競合を回避する
+(require 'helm-config)
+(helm-mode 1)
+
+;; helm ミニバッファでC-hをバックスペースに割り当て
+(define-key helm-read-file-map (kbd "C-h") 'delete-backward-char)
+
+;; helm TABで補完
+(define-key helm-read-file-map (kbd "<tab>") 'helm-execute-persistent-action)
+
