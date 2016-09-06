@@ -23,4 +23,4 @@ This init.el targets Windows emacs or GNU/Linux emacs. Based on [gnupack](http:/
  
 This init.el works well on an old netbook (such as Thinkpad X121e, which passmark cpu score is 616). Emacs replaces heavy web applications to light-weight elisp packages (e.g., firefox to eww, gmail to mew, etc).
 
-I know emacs is a powerful programming environment. But so far I use emacs as a powerful word processor. Therefore I have excluded programming support packages from my settings, like yasnippet.
+I know emacs is a powerful programming environment. But so far I use emacs as a powerful word processor. Therefore I have excluded programming support packages (e.g., yasnippet) from my settings.
