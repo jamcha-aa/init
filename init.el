@@ -597,7 +597,7 @@
 (define-key helm-read-file-map (kbd "<tab>") 'helm-execute-persistent-action)
 
 ;; helm-migemo
-(require 'helm-migemo)
+;(require 'helm-migemo)
 
 ;; helm-swoop
-(require 'helm-swoop)
+;(require 'helm-swoop)
