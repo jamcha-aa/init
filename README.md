@@ -10,6 +10,8 @@ This init.el targets Windows emacs or GNU/Linux emacs. Based on [gnupack](http:/
 - ddskk
 - flatui
 - helm
+- helm-migemo
+- helm-swoop
 - hiwin-mode
 - magit
 - migemo (and cmigemo)
