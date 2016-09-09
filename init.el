@@ -35,9 +35,11 @@
 ;; ツールチップ表示フォント
 ;(set-face-attribute 'tooltip nil :family "Myrica M" :height 110)
 
-(add-to-list 'default-frame-alist '(font . "源ノ角ゴシック Heavy-16"))
+(add-to-list 'default-frame-alist '(font . "源ノ角ゴシック Code JP H-16"))
+;(add-to-list 'default-frame-alist '(font . "源ノ角ゴシック Heavy-16"))
 ;(add-to-list 'default-frame-alist '(font . "Rounded\-X Mgen+ 1c heavy-18"))
 ;(add-to-list 'default-frame-alist '(font . "Myrica M-16"))
+
 
 ;; 初期画面の非表示
 (setq inhibit-startup-message nil)
@@ -364,7 +366,7 @@
 ;;; flatui
 (load-theme 'flatui t) 
 
-;;; org-mode
+;;; Org-mode
 (setq org-latex-classes '(("ltjsarticle"
             "\\documentclass{ltjsarticle}
 \\usepackage{graphicx}
@@ -594,3 +596,8 @@
 ;; helm TABで補完
 (define-key helm-read-file-map (kbd "<tab>") 'helm-execute-persistent-action)
 
+;; helm-migemo
+(require 'helm-migemo)
+
+;; helm-swoop
+(require 'helm-swoop)
