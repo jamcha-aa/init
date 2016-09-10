@@ -590,8 +590,38 @@
 (setq YaTeX-kanji-code nil)
 (setq YaTeX-latex-message-code 'utf-8)
 
-;; papyrus-mode
-(require 'papyrus-mode)
+;; org lighter
+;(setq jit-lock-context-time 5.0)
+;(setq jit-lock-defer-time 1.0)
+;;(setq jit-lock-stealth-time ;5.0
+                                        ;20.0)
+;(setq jit-lock-stealth-time 20.0)
+;(setq jit-lock-stealth-verbose nil)
+;(setq jit-lock-stealth-nice 0.5)
+;;(setq jit-lock-stealth-load ;50
+;300)
+;;(setq jit-lock-chunk-size ;100
+;20)
+;(setq jit-lock-stealth-load 300)
+;(setq jit-lock-chunk-size 20)
+
+
+;(setq font-lock-maximum-decoration '((c-mode . 1) (c++-mode . 1)(org-mode . 1)))
+
+;; wl
+;(require 'mime-setup)
+;(autoload 'wl "wl" "Wanderlust" t)
+;(autoload 'wl-draft "wl" "Write draft with Wanderlust." t)
+
+;; twittering-mode
+(require 'twittering-mode)
+(setq twittering-use-master-password t)
+
+;; eww function
+(setq browse-url-browser-function 'eww-browse-url)
+
+;; navi2ch
+;(setq navi2ch-net-http-proxy "localhost:8080")
 
 ;; magit
 (require 'magit)
@@ -603,6 +633,27 @@
 ;; org-license
 (add-to-list 'load-path "~/.emacs.d/elisp")
 (load "org-license")
+
+;; emms
+;(require 'emms-setup)
+;(emms-standard)
+;(emms-default-players)
+
+;; org-octopress
+;(require 'org-octopress)
+
+;; mew
+;(load "mew")
+
+;; conf el
+;(setq load-path
+;      (append '(
+;                "~/.emacs.d/conf"
+;                ) load-path))
+
+;; conf files
+;(load "org-feeds")
+;(load "mewconf")
 
 ;; helm
 (setq dired-bind-jump nil) ;;skkとの競合を回避する
