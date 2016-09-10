@@ -14,11 +14,11 @@ This init.el targets Windows emacs or GNU/Linux emacs. Based on [gnupack](http:/
 - magit
 - migemo (and cmigemo)
 - org-license
+- twittering-mode
 - yatex
 - emms (comment out on Windows)
 - mew (comment out on Windows)
 - navi2ch (comment out on Windows)
-- twittering-mode (comment out on Windows)
 - mewconf and org-feed are my personal settings of e-mail and RSS.
  
 This init.el works well on an old netbook (such as Thinkpad X121e, which passmark cpu score is 616). Emacs replaces heavy web applications to light-weight elisp packages (e.g., firefox to eww, gmail to mew, etc).
