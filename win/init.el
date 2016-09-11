@@ -677,5 +677,9 @@
 ;(require 'helm-swoop)
 
 ;; win git settings
-(setq magit-git-executable "I:/Program Files/Git/cmd/git.exe")
+(if (eq system-type 'windows-nt)
+    (progn
+      (setq exec-path (add-to-list 'exec-path "I:/Program Files/Git/bin"))
+      (setenv "PATH" (concat "I:\\Program Files\\Git\\bin;" (getenv "PATH")))))
 (setenv "GIT_ASKPASS" "git-gui--askpass")
+
