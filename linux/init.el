@@ -35,7 +35,8 @@
 ;; ツールチップ表示フォント
 ;(set-face-attribute 'tooltip nil :family "Myrica M" :height 110)
 
-(add-to-list 'default-frame-alist '(font . "源ノ角ゴシック Code JP H-16"))
+;(add-to-list 'default-frame-alist '(font . "源ノ角ゴシック Code JP H-16"))
+(add-to-list 'default-frame-alist '(font . "源ノ角ゴシック Code JP R-12"))
 ;(add-to-list 'default-frame-alist '(font . "源ノ角ゴシック Heavy-16"))
 ;(add-to-list 'default-frame-alist '(font . "Rounded\-X Mgen+ 1c heavy-18"))
 ;(add-to-list 'default-frame-alist '(font . "Myrica M-16"))
@@ -563,6 +564,10 @@
 ;; org-license
 (add-to-list 'load-path "~/.emacs.d/elisp")
 (load "org-license")
+(load "xah-dicts")
+
+;; dict tools
+(setq xah-lookup-browser-function 'eww)
 
 ;; emms
 (require 'emms-setup)

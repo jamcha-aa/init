@@ -633,6 +633,10 @@
 ;; org-license
 (add-to-list 'load-path "~/.emacs.d/elisp")
 (load "org-license")
+(load "xah-dicts")
+
+;; dict tools
+(setq xah-lookup-browser-function 'eww)
 
 ;; emms
 ;(require 'emms-setup)

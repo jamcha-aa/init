@@ -2,6 +2,7 @@
 author: jamcha (jamcha.aa@gmail.com)
 
 date: Sep 7, 2016.
+last update: Sep 11, 2016.
 
 My emacs init.el keeps this rule, ["Simple, slim and sleek, yet powerful"](http://scribes.sourceforge.net/) _specifically in writing texts (not coding)_.
 
@@ -16,6 +17,7 @@ This init.el targets Windows emacs or GNU/Linux emacs. Based on [gnupack](http:/
 - org-license
 - twittering-mode
 - yatex
+- xah-lookup
 - emms (comment out on Windows)
 - mew (comment out on Windows)
 - navi2ch (comment out on Windows)
