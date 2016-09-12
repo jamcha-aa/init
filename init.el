@@ -32,18 +32,12 @@
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
 
 (if (eq system-type 'windows-nt) 
-(set-face-attribute 'default nil :family "Myrica M" :height 130) ;; デフォルト フォント
-(set-face-attribute 'variable-pitch nil :family "Myrica P" :height 130) ;; プロポーショナル フォント
-(set-face-attribute 'fixed-pitch nil :family "Myrica N" :height 130) ;; 等幅フォント
-(set-face-attribute 'tooltip nil :family "Myrica M" :height 110) ;; ツールチップ表示フォント
-)
+    (add-to-list 'default-frame-alist '(font . "源ノ角ゴシック Code JP H-16"))
+  )
 
 (if (eq system-type 'gnu/linux)
-(add-to-list 'default-frame-alist '(font . "源ノ角ゴシック Code JP H-16"))
-;(add-to-list 'default-frame-alist '(font . "源ノ角ゴシック Heavy-16"))
-;(add-to-list 'default-frame-alist '(font . "Rounded\-X Mgen+ 1c heavy-18"))
-;(add-to-list 'default-frame-alist '(font . "Myrica M-16"))
-)
+    (add-to-list 'default-frame-alist '(font . "源ノ角ゴシック Code JP H-16"))
+  )
 
 ;; 初期画面の非表示
 (setq inhibit-startup-message nil)
