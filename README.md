@@ -29,5 +29,5 @@ I know emacs is a powerful programming environment. But so far I use emacs as a 
 #### Usage
 - Put init.el, environment, elisp into the .emacs.d.
 - Install packages of the previous section.
-- Install "Myrica" or "Source Han Sans Code-JP" fonts. Both of them are free.
+- Install "Source Han Sans Code-JP" fonts if you use linux.
 - Enjoy.
