@@ -1,7 +1,7 @@
 # init.el
 author: jamcha (jamcha.aa@gmail.com)
 
-last update: Sep 11, 2016.
+last update: Sep 12, 2016.
 
 My emacs init.el keeps this rule, ["Simple, slim and sleek, yet powerful"](http://scribes.sourceforge.net/) _specifically in writing texts (not coding)_.
 

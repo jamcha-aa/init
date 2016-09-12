@@ -6,6 +6,9 @@
 (set-default-coding-systems 'utf-8-unix)
 
 ;; テキストファイル／新規バッファの文字コード
+;(if (eq system-type 'gnu/linux)
+;    (set-language-environment 'Japanese)
+;    (prefer-coding-system 'utf-8))
 (prefer-coding-system 'utf-8-unix)
 
 ;; ファイル名の文字コード
@@ -17,59 +20,30 @@
 ;; サブプロセスのデフォルト文字コード
 (setq default-process-coding-system '(undecided-dos . utf-8-unix))
 
+;; windows-nt or gnu/linux files
+(add-to-list 'load-path "~/.emacs.d/environment")
 
-;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
-;;; @ key binding - keyboard                                        ;;;
-;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
-
-;; Altキーを使用せずにMetaキーを使用
-;(setq w32-alt-is-meta nil)
-
-
-;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
-;;; @ language - input method                                       ;;;
-;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
-
-;; モードラインの表示文字列
-(setq-default w32-ime-mode-line-state-indicator "[Aa] ")
-(setq w32-ime-mode-line-state-indicator-list '("[Aa]" "[あ]" "[Aa]"))
-
-;; IME初期化
-(w32-ime-initialize)
-
-;; デフォルトIME
-(setq default-input-method "W32-IME")
-
-;; IME変更
-(global-set-key (kbd "C-\\") 'toggle-input-method)
-
-;; 漢字/変換キー入力時のエラーメッセージ抑止
-(global-set-key (kbd "<A-kanji>") 'ignore)
-(global-set-key (kbd "<M-kanji>") 'ignore)
-(global-set-key (kbd "<kanji>") 'ignore)
-
+;; win input methods
+(if (eq system-type 'windows-nt)
+    (load "im4win"))
 
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
 ;;; @ language - fontset                                            ;;;
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
 
-;; デフォルト フォント
-(set-face-attribute 'default nil :family "Myrica M" :height 130)
+(if (eq system-type 'windows-nt) 
+(set-face-attribute 'default nil :family "Myrica M" :height 130) ;; デフォルト フォント
+(set-face-attribute 'variable-pitch nil :family "Myrica P" :height 130) ;; プロポーショナル フォント
+(set-face-attribute 'fixed-pitch nil :family "Myrica N" :height 130) ;; 等幅フォント
+(set-face-attribute 'tooltip nil :family "Myrica M" :height 110) ;; ツールチップ表示フォント
+)
 
-;; プロポーショナル フォント
-(set-face-attribute 'variable-pitch nil :family "Myrica P" :height 130)
-
-;; 等幅フォント
-(set-face-attribute 'fixed-pitch nil :family "Myrica N" :height 130)
-
-;; ツールチップ表示フォント
-(set-face-attribute 'tooltip nil :family "Myrica M" :height 110)
-
-;(add-to-list 'default-frame-alist '(font . "源ノ角ゴシック Code JP H-16"))
+(if (eq system-type 'gnu/linux)
+(add-to-list 'default-frame-alist '(font . "源ノ角ゴシック Code JP H-16"))
 ;(add-to-list 'default-frame-alist '(font . "源ノ角ゴシック Heavy-16"))
 ;(add-to-list 'default-frame-alist '(font . "Rounded\-X Mgen+ 1c heavy-18"))
 ;(add-to-list 'default-frame-alist '(font . "Myrica M-16"))
-
+)
 
 ;; 初期画面の非表示
 (setq inhibit-startup-message nil)
@@ -86,32 +60,10 @@
 (column-number-mode t)
 
 ;; モードライン カスタマイズ
-(setq-default
- mode-line-format
- `(
-   ""
-   w32-ime-mode-line-state-indicator
-   " "
-   mode-line-mule-info
-   mode-line-modified
-   mode-line-frame-identification
-   mode-line-buffer-identification
-   " "
-   global-mode-string
-   " %[("
-   mode-name
-   mode-line-process
-   "%n"
-   ")%] "
-   (which-func-mode ("" which-func-format " "))
-   (line-number-mode
-    (:eval
-     (format "L%%l/L%d " (count-lines (point-max) 1) )))
-   (column-number-mode " C%c ")
-   (-3 . "%p")
-   )
- )
-(setq mode-line-frame-identification " ")
+(if (eq system-type 'windows-nt)
+    (load "mode-line-win"))
+(if (eq system-type 'gnu/linux)
+    (load "mode-line-linux"))
 
 ;; cp932エンコードの表記変更
 (coding-system-put 'cp932 :mnemonic ?P)
@@ -181,9 +133,6 @@
       )
     )
  )
-
-;; バッファ切り替え時の状態引継ぎ設定
-(setq w32-ime-buffer-switch-p nil)
 
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
 ;;; @ screen - linum                                                ;;;
@@ -327,7 +276,10 @@
 
 (require 'package)
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/packages/") t)
+             '("melpa" . "http://melpa.org/packages/"))
+(when (< emacs-major-version 24)
+  ;; For important compatibility libraries like cl-lib
+  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
@@ -396,7 +348,7 @@
 ;;; flatui
 (load-theme 'flatui t) 
 
-;;; org-mode
+;;; Org-mode
 (setq org-latex-classes '(("ltjsarticle"
             "\\documentclass{ltjsarticle}
 \\usepackage{graphicx}
@@ -461,15 +413,13 @@
   ("\\paragraph{%s}" . "\\paragraph*{%s}")
   ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 
-
-
 ;;; eww google
 (setq eww-search-prefix "https://www.google.co.jp/search?q=")
 
 ;; ----------------------------------------
 ;; ミニバッファで日本語入力可にする
 ;; NTEmacs 23.3.92以降で有効、らしい
-
+(if (eq system-type 'windows-nt) 
 (defun w32-isearch-update ()
   (interactive)
   (isearch-update))
@@ -479,9 +429,10 @@
 (add-hook 'isearch-mode-hook
           (lambda () (setq w32-ime-composition-window (minibuffer-window))))
 (add-hook 'isearch-mode-end-hook
-          (lambda () (setq w32-ime-composition-window nil)))
+          (lambda () (setq w32-ime-composition-window nil))))
 
 ;; skk
+;; sudo apt install ddskk skkdic for linux
 (require 'skk-auto)
 (global-set-key (kbd "C-x C-j") 'skk-mode)
 
@@ -489,7 +440,11 @@
 (setq skk-dcomp-activate t)
 
 ;; skk-jisho
-(setq skk-large-jisyo "~/.emacs.d/SKK-JISYO.L")
+(if (eq system-type 'gnu/linux)
+(setq skk-large-jisyo "/usr/share/skk/SKK-JISYO.L"))
+
+(if (eq system-type 'windows-nt)
+    (setq skk-large-jisyo "~/.emacs.d/SKK-JISYO.L"))
 
 ;; skk sticky-key
 (setq skk-sticky-key ";")
@@ -497,13 +452,22 @@
 ;; skk kutouten
 (setq-default skk-kutouten-type 'jp-en)
 
+;; mozc
+;; sudo apt install emacs-mozc emacs-mozc-bin
+;(require 'mozc)
+;(set-language-environment "Japanese")
+;(setq default-input-method "japanese-mozc")
+
 ;; org-mode & org-capture
 ;; (save-window-excursion (shell-command (format "emacs-test -l test-minimum -l %s %s &" buffer-file-name buffer-file-name)))
 (require 'org-install)
 (setq org-startup-truncated nil)
 (setq org-return-follows-link t)
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
-(setq org-directory "i:/OneDrive/org/")
+(if (eq system-type 'gnu/linux)
+    (setq org-directory "~/OneDrive/org/"))
+(if (eq system-type 'windows-nt)
+    (setq org-directory "i:/OneDrive/org/"))
 (setq org-default-notes-file (concat org-directory "agenda.org"))
 ;; アジェンダ表示の対象ファイル
 (setq org-agenda-files (list org-directory))
@@ -621,7 +585,8 @@
 (setq browse-url-browser-function 'eww-browse-url)
 
 ;; navi2ch
-;(setq navi2ch-net-http-proxy "localhost:8080")
+(if (eq system-type 'gnu/linux)
+    (setq navi2ch-net-http-proxy "localhost:8080"))
 
 ;; magit
 (require 'magit)
@@ -639,27 +604,31 @@
 (setq xah-lookup-browser-function 'eww)
 
 ;; emms
-;(require 'emms-setup)
-;(emms-standard)
-;(emms-default-players)
+(cond ((eq system-type 'gnu/linux)
+  (require 'emms-setup)
+  (emms-standard)
+  (emms-default-players)))
 
 ;; org-octopress
 ;(require 'org-octopress)
 
 ;; mew
-;(load "mew")
+(if (eq system-type 'gnu/linux)
+    (load "mew"))
 
 ;; conf el
-;(setq load-path
-;      (append '(
-;                "~/.emacs.d/conf"
-;                ) load-path))
+(if (eq system-type 'gnu/linux)
+    (setq load-path
+          (append '(
+                    "~/.emacs.d/conf"
+                    ) load-path)))
 
 ;; conf files
-;(load "org-feeds")
-;(load "mewconf")
+(cond ((eq system-type 'gnu/linux)
+  (load "org-feeds")
+  (load "mewconf")))
 
-;; helm
+;; Helm
 (setq dired-bind-jump nil) ;;skkとの競合を回避する
 (require 'helm-config)
 (helm-mode 1)
@@ -682,4 +651,4 @@
       (setq exec-path (add-to-list 'exec-path "I:/Program Files/Git/bin"))
       (setenv "PATH" (concat "I:\\Program Files\\Git\\bin;" (getenv "PATH")))))
 (setenv "GIT_ASKPASS" "git-gui--askpass")
-(setenv "SSH_ASKPASS" "git-gui--askpass")
+
