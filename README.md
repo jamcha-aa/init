@@ -7,7 +7,7 @@ My emacs init.el keeps this rule, ["Simple, slim and sleek, yet powerful"](http:
 
 This init.el targets Windows emacs or GNU/Linux emacs. Based on [gnupack](http://gnupack.osdn.jp/docs/latest/UsersGuide.html)'s init.el, I added following packages to work without gnupack, because gnupack is difficult to install on poor storage (eMMC 32gb) netbooks with latex system.
 
-- ddskk
+- ddskk (and SKK-JISYO.L)
 - flatui
 - helm
 - hiwin-mode
@@ -25,3 +25,9 @@ This init.el targets Windows emacs or GNU/Linux emacs. Based on [gnupack](http:/
 This init.el works well on an old netbook (such as Thinkpad X121e, which passmark cpu score is 616). Emacs replaces heavy web applications to light-weight elisp packages (e.g., firefox to eww, gmail to mew, etc).
 
 I know emacs is a powerful programming environment. But so far I use emacs as a powerful word processor. Therefore I have excluded programming support packages (e.g., yasnippet) from my settings.
+
+#### Usage
+- Put init.el, environment, elisp into the .emacs.d.
+- Install packages of the previous section.
+- Install "Myrica" or "Source Han Sans Code-JP" fonts. Both of them are free.
+- Enjoy.
