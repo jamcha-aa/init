@@ -32,11 +32,11 @@
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
 
 (if (eq system-type 'windows-nt) 
-    (add-to-list 'default-frame-alist '(font . "源ノ角ゴシック Code JP H-16"))
+    (add-to-list 'default-frame-alist '(font . "Meiryo-12"))
   )
 
 (if (eq system-type 'gnu/linux)
-    (add-to-list 'default-frame-alist '(font . "源ノ角ゴシック Code JP H-16"))
+    (add-to-list 'default-frame-alist '(font . "源ノ角ゴシック Code JP R-12"))
   )
 
 ;; 初期画面の非表示
