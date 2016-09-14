@@ -648,5 +648,5 @@
       (setenv "SSH_ASKPASS" "git-gui--askpass")))
 
 ;; disable-mouse
-(require 'disable-mouse)
-(global-disable-mouse-mode)
+;(require 'disable-mouse)
+;(global-disable-mouse-mode)
