@@ -646,3 +646,7 @@
       (setenv "PATH" (concat "I:\\Program Files\\Git\\bin;" (getenv "PATH")))
                                         ;(setenv "GIT_ASKPASS" "git-gui--askpass")
       (setenv "SSH_ASKPASS" "git-gui--askpass")))
+
+;; disable-mouse
+(require 'disable-mouse)
+(global-disable-mouse-mode)
