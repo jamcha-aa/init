@@ -1,7 +1,7 @@
 # init.el
 author: jamcha (jamcha.aa@gmail.com)
 
-last update: Sep 12, 2016.
+last update: Sep 17, 2016.
 
 My emacs init.el keeps this rule, ["Simple, slim and sleek, yet powerful"](http://scribes.sourceforge.net/) _specifically in writing texts (not coding)_.
 
@@ -31,3 +31,7 @@ I know emacs is a powerful programming environment. But so far I use emacs as a 
 - Install packages of the previous section.
 - Install "Source Han Sans Code-JP" fonts if you use linux.
 - Enjoy.
+
+#### bash on ubuntu on windows init.el
+
+Recently I made an another version of init.el (in buw folder) especially for bash on ubuntu on windows. This version contains ddskk, helm, magit, org-license, twittering-mode, yatex, and xah-lookup. This init.el allows dired to open binary files with registered windows applications (e.g., open a pdf with adobe reader). I strongly recommend to use [wsl-terminal and cbwin](https://github.com/goreliu/wsl-terminal/releases) via bash accessing.

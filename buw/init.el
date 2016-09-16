@@ -24,20 +24,20 @@
 (add-to-list 'load-path "~/.emacs.d/environment")
 
 ;; win input methods
-(if (eq system-type 'windows-nt)
-    (load "im4win"))
+;(if (eq system-type 'windows-nt)
+;    (load "im4win"))
 
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
 ;;; @ language - fontset                                            ;;;
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
 
-(if (eq system-type 'windows-nt) 
-    (add-to-list 'default-frame-alist '(font . "Meiryo-12"))
-  )
+;(if (eq system-type 'windows-nt) 
+;    (add-to-list 'default-frame-alist '(font . "Meiryo-12"))
+;  )
 
-(if (eq system-type 'gnu/linux)
-    (add-to-list 'default-frame-alist '(font . "源ノ角ゴシック Code JP R-12"))
-  )
+;(if (eq system-type 'gnu/linux)
+;    (add-to-list 'default-frame-alist '(font . "源ノ角ゴシック Code JP R-12"))
+;  )
 
 ;; 初期画面の非表示
 (setq inhibit-startup-message nil)
@@ -54,10 +54,11 @@
 (column-number-mode t)
 
 ;; モードライン カスタマイズ
-(if (eq system-type 'windows-nt)
-    (load "mode-line-win"))
-(if (eq system-type 'gnu/linux)
-    (load "mode-line-linux"))
+;(if (eq system-type 'windows-nt)
+;    (load "mode-line-win"))
+;(if (eq system-type 'gnu/linux)
+;    (load "mode-line-linux"))
+(load "mode-line-linux")
 
 ;; cp932エンコードの表記変更
 (coding-system-put 'cp932 :mnemonic ?P)
@@ -311,7 +312,7 @@
 (setq-default indent-tabs-mode nil)
 
 ;;; 現在行に色をつける
-(global-hl-line-mode 1)
+;(global-hl-line-mode 1)
 
 ;;; ミニバッファ履歴を次回Emacs起動時にも保存する
 (savehist-mode 1)
@@ -336,11 +337,11 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
-;;; solarized-light
-;(load-theme 'solarized-light t)
+;;; solarized-dark
+;(load-theme 'solarized-dark t)
 
 ;;; flatui
-(load-theme 'flatui t) 
+;(load-theme 'flatui t) 
 
 ;;; Org-mode
 (setq org-latex-classes '(("ltjsarticle"
@@ -459,9 +460,7 @@
 (setq org-return-follows-link t)
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 (if (eq system-type 'gnu/linux)
-    (setq org-directory "~/OneDrive/org/"))
-(if (eq system-type 'windows-nt)
-    (setq org-directory "i:/OneDrive/org/"))
+    (setq org-directory "~/Documents/org/"))
 (setq org-default-notes-file (concat org-directory "agenda.org"))
 ;; アジェンダ表示の対象ファイル
 (setq org-agenda-files (list org-directory))
@@ -534,11 +533,11 @@
   )
 
 ;;; hiwin-mode
-(hiwin-activate)                           ;; hiwin-modeを有効化
-(set-face-background 'hiwin-face "#eee8d5") ;; 非アクティブウィンドウの背景色を設定
+;(hiwin-activate)                           ;; hiwin-modeを有効化
+;(set-face-background 'hiwin-face "#eee8d5") ;; 非アクティブウィンドウの背景色を設定
 
 ;; カーソルの点滅を止める
-(blink-cursor-mode 0)
+;(blink-cursor-mode 0)
 
 ;; yatex
 (setq auto-mode-alist
@@ -573,14 +572,14 @@
 
 ;; twittering-mode
 (require 'twittering-mode)
-(setq twittering-use-master-password t)
+;(setq twittering-use-master-password t)
 
 ;; eww function
 (setq browse-url-browser-function 'eww-browse-url)
 
 ;; navi2ch
-(if (eq system-type 'gnu/linux)
-    (setq navi2ch-net-http-proxy "localhost:8080"))
+;(if (eq system-type 'gnu/linux)
+;    (setq navi2ch-net-http-proxy "localhost:8080"))
 
 ;; magit
 (require 'magit)
@@ -598,17 +597,17 @@
 (setq xah-lookup-browser-function 'eww)
 
 ;; emms
-(cond ((eq system-type 'gnu/linux)
-  (require 'emms-setup)
-  (emms-standard)
-  (emms-default-players)))
+;(cond ((eq system-type 'gnu/linux)
+;  (require 'emms-setup)
+;  (emms-standard)
+;  (emms-default-players)))
 
 ;; org-octopress
 ;(require 'org-octopress)
 
 ;; mew
-(if (eq system-type 'gnu/linux)
-    (load "mew"))
+;(if (eq system-type 'gnu/linux)
+;    (load "mew"))
 
 ;; conf el
 (if (eq system-type 'gnu/linux)
@@ -618,9 +617,9 @@
                     ) load-path)))
 
 ;; conf files
-(cond ((eq system-type 'gnu/linux)
+;(cond ((eq system-type 'gnu/linux)
   (load "org-feeds")
-  (load "mewconf")))
+;  (load "mewconf")))
 
 ;; Helm
 (setq dired-bind-jump nil) ;;skkとの競合を回避する
@@ -640,13 +639,15 @@
 ;(require 'helm-swoop)
 
 ;; win git settings
-(if (eq system-type 'windows-nt)
-    (progn
-      (setq exec-path (add-to-list 'exec-path "I:/Program Files/Git/bin"))
-      (setenv "PATH" (concat "I:\\Program Files\\Git\\bin;" (getenv "PATH")))
+;(if (eq system-type 'windows-nt)
+;    (progn
+;      (setq exec-path (add-to-list 'exec-path "I:/Program Files/Git/bin"))
+;      (setenv "PATH" (concat "I:\\Program Files\\Git\\bin;" (getenv "PATH")))
                                         ;(setenv "GIT_ASKPASS" "git-gui--askpass")
-      (setenv "SSH_ASKPASS" "git-gui--askpass")))
+;      (setenv "SSH_ASKPASS" "git-gui--askpass")))
 
 ;; disable-mouse
 ;(require 'disable-mouse)
 ;(global-disable-mouse-mode)
+
+(load "diredBUW")
