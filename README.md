@@ -17,16 +17,18 @@ This init.el targets Windows emacs or GNU/Linux emacs. Based on [gnupack](http:/
 - migemo (and cmigemo)
 - org-license
 - twittering-mode
+- yasnippet
 - yatex
 - xah-lookup
 - emms (comment out on Windows)
 - mew (comment out on Windows)
 - navi2ch (comment out on Windows)
+- likemc enables dired to behave as a two panel file manager (e.g., [mc](https://github.com/MidnightCommander/mc))
 - mewconf and org-feed are my personal settings of e-mail and RSS.
  
 This init.el works well on an old netbook (such as Thinkpad X121e, which passmark cpu score is 616). Emacs replaces heavy web applications to light-weight elisp packages (e.g., firefox to eww, gmail to mew, etc).
 
-I know emacs is a powerful programming environment. But so far I use emacs as a powerful word processor. Therefore I have excluded programming support packages (e.g., yasnippet) from my settings.
+I know emacs is a powerful programming environment. But so far I use emacs as a powerful word processor. Therefore I have excluded some popular programming support packages (e.g., auto-complete) from my settings.
 
 #### Usage
 - Put init.el, environment, elisp into the .emacs.d.
