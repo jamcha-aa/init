@@ -671,10 +671,11 @@
 
 (yas-global-mode 1)
 
-;; C-tでタブ移動
-(defun other-window-or-split ()
-  (interactive)
-  (when (one-window-p) (split-window-horizontally))
-  (other-window 1))
+;; http://qiita.com/sawa-@github/items/0efc5b43b78d0695eb0e
+;; <C-t>でウィンドウ切り替え
+(global-set-key (kbd "C-t") 'other-window)
 
-(global-set-key (kbd "C-t") 'other-window-or-split)
+;; Dired用にウィンドウ切り替え設定
+(add-hook 'dired-mode-hook
+      (lambda ()
+        (define-key dired-mode-map (kbd "C-t") 'other-window)))
