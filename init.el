@@ -670,3 +670,11 @@
 (define-key yas-minor-mode-map (kbd "C-x i v") 'yas-visit-snippet-file)
 
 (yas-global-mode 1)
+
+;; C-tでタブ移動
+(defun other-window-or-split ()
+  (interactive)
+  (when (one-window-p) (split-window-horizontally))
+  (other-window 1))
+
+(global-set-key (kbd "C-t") 'other-window-or-split)
