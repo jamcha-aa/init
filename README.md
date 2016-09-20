@@ -30,7 +30,30 @@ This init.el works well on an old netbook (such as Thinkpad X121e, which passmar
 
 I know emacs is a powerful programming environment. But so far I use emacs as a powerful word processor. Therefore I have excluded some popular programming support packages (e.g., auto-complete) from my settings.
 
-#### Usage
+### Customized keyboard shortcuts
+##### org-mode
+- "C-c l" org-store-link
+- "C-c c" org-capture
+- "C-c a" org-agenda
+- "C-c b" org-iswitchb
+
+org-capture and org-agenda files are stored to OneDrive. Modify paths as you want.
+
+##### likemc
+- "c" dired-copy-to-other-window
+- "r" dired-move-to-other-window
+- "l" dired-make-symlinks-to-other-window
+- "e" wdired-change-to-wdired-mode
+
+##### yasnippet
+- "C-x i i" yas-insert-snippet
+- "C-x i n" yas-new-snippet
+- "C-x i v" yas-visit-snippet-file
+
+##### window switching
+- "C-t" works as "C-x o"
+
+### Usage
 - Put init.el, environment, elisp into the .emacs.d.
 - Install packages of the previous section.
 - Install "Source Han Sans Code-JP" fonts if you use linux.
