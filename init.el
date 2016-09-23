@@ -535,7 +535,8 @@
 
 ;;; hiwin-mode
 (hiwin-activate)                           ;; hiwin-modeを有効化
-(set-face-background 'hiwin-face "#eee8d5") ;; 非アクティブウィンドウの背景色を設定
+;(set-face-background 'hiwin-face "#eee8d5") ;; 非アクティブウィンドウの背景色を設定
+(set-face-background 'hiwin-face "#d3d3d3") ;; 非アクティブウィンドウの背景色を設定
 
 ;; カーソルの点滅を止める
 (blink-cursor-mode 0)
