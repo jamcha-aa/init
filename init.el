@@ -579,6 +579,9 @@
 ;; eww function
 (setq browse-url-browser-function 'eww-browse-url)
 
+;; eww background color rejection
+(setq-local eww-disable-colorize t)
+
 ;; navi2ch
 (if (eq system-type 'gnu/linux)
     (setq navi2ch-net-http-proxy "localhost:8080"))
