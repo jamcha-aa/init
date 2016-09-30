@@ -9,18 +9,18 @@
    mode-line-frame-identification
    mode-line-buffer-identification
    " "
-   global-mode-string
    " %[("
    mode-name
    mode-line-process
    "%n"
    ")%] "
-   (which-func-mode ("" which-func-format " "))
    (line-number-mode
     (:eval
      (format "L%%l/L%d " (count-lines (point-max) 1) )))
    (column-number-mode " C%c ")
+   global-mode-string
    (-3 . "%p")
+   (which-func-mode ("" which-func-format " "))
    )
  )
 (setq mode-line-frame-identification " ")
