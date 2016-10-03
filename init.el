@@ -631,7 +631,8 @@
 (if (eq system-type 'windows-nt)
     (autoload 'wl "wl" "Wanderlust" t)
   (autoload 'wl-draft "wl" "Write draft with Wanderlust." t)
-  
+
+  ;; http://www.otacky.jp/otaku_comm-14Q4.html
   (autoload 'w3m "w3m" "Interface for w3m on Emacs." t)
   (setq w3m-home-page "https://github.com/jamcha-aa")
   (setq w3m-key-binding 'info)
