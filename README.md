@@ -21,9 +21,9 @@ This init.el targets Windows emacs or GNU/Linux emacs. Based on [gnupack](http:/
 - yatex
 - xah-lookup
 - emms (comment out on Windows)
-- mew (for Linux, comment out for Windows)
+- mew (for Linux)
 - navi2ch (comment out on Windows)
-- wanderlust (for Windows, comment out for Linux)
+- wanderlust (for Windows)
 - likemc enables dired to behave as a two panel file manager (e.g., [mc](https://github.com/MidnightCommander/mc))
 - mewconf and org-feed are my private settings of e-mail and RSS.
 
