@@ -567,11 +567,6 @@
 
 ;(setq font-lock-maximum-decoration '((c-mode . 1) (c++-mode . 1)(org-mode . 1)))
 
-;; wl
-;(require 'mime-setup)
-;(autoload 'wl "wl" "Wanderlust" t)
-;(autoload 'wl-draft "wl" "Write draft with Wanderlust." t)
-
 ;; twittering-mode
 (require 'twittering-mode)
 (setq twittering-use-master-password t)
@@ -615,16 +610,31 @@
     (load "mew"))
 
 ;; conf el
-(if (eq system-type 'gnu/linux)
-    (setq load-path
-          (append '(
-                    "~/.emacs.d/conf"
-                    ) load-path)))
+(setq load-path
+      (append '(
+                "~/.emacs.d/conf"
+                ) load-path))
 
 ;; conf files
 (cond ((eq system-type 'gnu/linux)
-  (load "org-feeds")
-  (load "mewconf")))
+       (load "mewconf")))
+(load "org-feeds")
+
+;; wl
+(if (eq system-type 'windows-nt)
+    (autoload 'wl "wl" "Wanderlust" t)
+  (autoload 'wl-draft "wl" "Write draft with Wanderlust." t)
+  
+  (autoload 'w3m "w3m" "Interface for w3m on Emacs." t)
+  (setq w3m-home-page "https://github.com/jamcha-aa")
+  (setq w3m-key-binding 'info)
+  (setq w3m-fill-column 80)
+  
+  (setq mime-setup-enable-inline-html 'shr)
+  (require 'mime-setup)
+  (eval-after-load 'shr
+    '(defun shr-colorize-region (start end fg &optional bg)
+       nil)))
 
 ;; Helm
 (setq dired-bind-jump nil) ;;skkとの競合を回避する

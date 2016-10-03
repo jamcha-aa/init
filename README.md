@@ -21,11 +21,12 @@ This init.el targets Windows emacs or GNU/Linux emacs. Based on [gnupack](http:/
 - yatex
 - xah-lookup
 - emms (comment out on Windows)
-- mew (comment out on Windows)
+- mew (for Linux, comment out for Windows)
 - navi2ch (comment out on Windows)
+- wanderlust (for Windows, comment out for Linux)
 - likemc enables dired to behave as a two panel file manager (e.g., [mc](https://github.com/MidnightCommander/mc))
-- mewconf and org-feed are my personal settings of e-mail and RSS.
- 
+- mewconf and org-feed are my private settings of e-mail and RSS.
+
 This init.el works well on an old netbook (such as Thinkpad X121e, which passmark cpu score is 616). Emacs replaces heavy web applications to light-weight elisp packages (e.g., firefox to eww, gmail to mew, etc).
 
 I know emacs is a powerful programming environment. But so far I use emacs as a powerful word processor. Therefore I have excluded some popular programming support packages (e.g., auto-complete) from my settings.
@@ -56,6 +57,7 @@ org-capture and org-agenda files are stored to OneDrive. Modify paths as you wan
 ### Usage
 - Put init.el, environment, elisp into the .emacs.d.
 - Install packages of the previous section.
+  + Caution: Some private files (e.g., mewconf.el) are missing.
 - Install "Source Han Sans Code-JP" fonts if you use linux.
 - Enjoy.
 
