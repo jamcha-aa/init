@@ -620,6 +620,13 @@
        (load "mewconf")))
 (load "org-feeds")
 
+;; http://suzuki.tdiary.net/20140813.html#c04
+(if (eq system-type 'gnu/linux)
+(when (and (fboundp 'shr-render-region)
+           ;; \\[shr-render-region] requires Emacs to be compiled with libxml2.
+           (fboundp 'libxml-parse-html-region))
+  (setq mew-prog-text/html 'shr-render-region))) ;; 'mew-mime-text/html-w3m
+
 ;; wl
 (if (eq system-type 'windows-nt)
     (autoload 'wl "wl" "Wanderlust" t)
