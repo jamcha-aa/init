@@ -1,7 +1,7 @@
 # init.el
 author: jamcha (jamcha.aa@gmail.com)
 
-last update: Oct 3, 2016.
+last update: Oct 4, 2016.
 
 ### emacs init.el for Windows or GNU/Linux
 
