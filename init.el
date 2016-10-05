@@ -664,8 +664,8 @@
 ;; win git settings
 (if (eq system-type 'windows-nt)
     (progn
-      (setq exec-path (add-to-list 'exec-path "I:/Program Files/Git/bin"))
-      (setenv "PATH" (concat "I:\\Program Files\\Git\\bin;" (getenv "PATH")))
+      (setq exec-path (add-to-list 'exec-path "C:/Program Files/Git/bin"))
+      (setenv "PATH" (concat "C:\\Program Files\\Git\\bin;" (getenv "PATH")))
       (setenv "GIT_ASKPASS" "git-gui--askpass")
       (setenv "SSH_ASKPASS" "git-gui--askpass")))
 
