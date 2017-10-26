@@ -1,7 +1,7 @@
 # init.el
 author: jamcha (jamcha.aa@gmail.com)
 
-last update: Oct 4, 2016.
+last update: Oct 27, 2017.
 
 ### emacs init.el for Windows or GNU/Linux
 
@@ -9,7 +9,7 @@ My emacs init.el keeps this rule, ["Simple, slim and sleek, yet powerful"](http:
 
 This init.el targets Windows emacs or GNU/Linux emacs. Based on [gnupack](http://gnupack.osdn.jp/docs/latest/UsersGuide.html)'s init.el, I added following packages to work without gnupack, because gnupack is a large package to install on poor storage (eMMC 32gb) netbooks with latex system.
 
-- ddskk (and SKK-JISYO.L)
+- ddskk (and SKK-JISYO.L), skk-azik compatible.
 - flatui
 - helm
 - hiwin-mode
@@ -54,11 +54,12 @@ org-capture and org-agenda files are stored to OneDrive. Modify paths as you wan
 ##### window switching
 - "C-t" works as "C-x o"
 
-### Usage
+### Install
 - Put init.el, environment, elisp into the .emacs.d.
 - Install packages of the previous section.
   + Caution: Some private files (e.g., mewconf.el) are missing.
 - Install "Source Han Sans Code-JP" fonts if you use linux.
+- If you want to use skk-azik, put .skk to your home directory.
 - Enjoy.
 
 ### init.el for bash on ubuntu on windows

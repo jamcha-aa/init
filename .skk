@@ -1,0 +1,3 @@
+;; skk-azik
+(setq skk-use-azik t)
+(setq-default skk-kutouten-type 'jp-en)
