@@ -440,8 +440,9 @@
 (if (eq system-type 'windows-nt)
     (setq skk-large-jisyo "~/.emacs.d/SKK-JISYO.L"))
 
-;; skk sticky-key
-(setq skk-sticky-key ";")
+;; skk sticky-key on windows
+(if (eq system-type 'windows-nt)
+(setq skk-sticky-key ";"))
 
 ;; skk kutouten
 (setq-default skk-kutouten-type 'jp-en)
