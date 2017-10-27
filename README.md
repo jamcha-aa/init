@@ -60,6 +60,7 @@ org-capture and org-agenda files are stored to OneDrive. Modify paths as you wan
   + Caution: Some private files (e.g., mewconf.el) are missing.
 - Install "Source Han Sans Code-JP" fonts if you use linux.
 - If you want to use skk-azik, put .skk to your home directory.
+  + Edit .skk when you use US keyboards.
 - Enjoy.
 
 ### init.el for bash on ubuntu on windows

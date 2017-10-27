@@ -1,3 +1,5 @@
 ;; skk-azik
 (setq skk-use-azik t)
+;; if you use us keyboard, replace jp106 to en
+(setq skk-azik-keyboard-type 'jp106)
 (setq-default skk-kutouten-type 'jp-en)
