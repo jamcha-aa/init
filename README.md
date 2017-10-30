@@ -63,9 +63,9 @@ org-capture and org-agenda files are stored to OneDrive. Modify paths as you wan
   + Edit .skk when you use US keyboards.
 - Enjoy.
 
-### init.el for bash on ubuntu on windows
+### init.el for bash on ubuntu on windows (Sep 2016, slightly obsolete)
 
-Recently I made an another version of init.el (in buw folder) especially for bash on ubuntu on windows. This version contains ddskk, helm, magit, org-license, twittering-mode, yatex, and xah-lookup. This init.el allows dired to open binary files with registered windows applications (e.g., open a pdf with adobe reader). I strongly recommend to use [wsl-terminal and cbwin](https://github.com/goreliu/wsl-terminal/releases) via bash accessing.
+I made an another version of init.el (in buw folder) especially for bash on ubuntu on windows. This version contains ddskk, helm, magit, org-license, twittering-mode, yatex, and xah-lookup. This init.el allows dired to open binary files with registered windows applications (e.g., open a pdf with adobe reader). I strongly recommend to use [wsl-terminal and cbwin](https://github.com/goreliu/wsl-terminal/releases) via bash accessing.
 
 #### Usage
 - Make [wslstart](https://www49.atwiki.jp/ntemacs/pages/62.html)
