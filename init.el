@@ -580,7 +580,7 @@
 
 ;; navi2ch
 (if (eq system-type 'gnu/linux)
-    (setq navi2ch-net-http-proxy "localhost:8080")
+   ;(setq navi2ch-net-http-proxy "localhost:8080") ; obsolete
     (setq navi2ch-list-valid-host-regexp
           (concat "\\("
                   (regexp-opt '(".2ch.net" ".5ch.net" ".bbspink.com" ".machibbs.com" ".machi.to"))
