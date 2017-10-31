@@ -582,6 +582,8 @@
 (if (eq system-type 'gnu/linux)
    ; once you get board.txt, remove comment below
    ;(setq navi2ch-net-http-proxy "localhost:8080")
+    (setq navi2ch-article-max-buffers 5)
+    (setq navi2ch-article-auto-expunge t)
     (setq navi2ch-list-valid-host-regexp
           (concat "\\("
                   (regexp-opt '(".2ch.net" ".5ch.net" ".bbspink.com" ".machibbs.com" ".machi.to"))
