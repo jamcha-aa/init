@@ -1,7 +1,7 @@
 # init.el
 author: jamcha (jamcha.aa@gmail.com)
 
-last update: Oct 31, 2017.
+last update: Nov 6, 2017.
 
 ### emacs init.el for Windows or GNU/Linux
 
@@ -21,6 +21,7 @@ This init.el targets Windows emacs or GNU/Linux emacs. Based on [gnupack](http:/
 - yatex
 - xah-lookup
 - emms (comment out on Windows)
+- dired-tar (archive manager for Linux)
 - mew (for Linux)
 - navi2ch (comment out on Windows)
 - wanderlust (for Windows)

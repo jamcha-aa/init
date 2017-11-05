@@ -713,3 +713,7 @@
 
 ;; partial frame truncate
 (setq truncate-partial-width-windows nil)
+
+; dired-tar
+(if (eq system-type 'gnu/linux)
+(setq dired-guess-shell-gnutar "tar"))
