@@ -716,4 +716,5 @@
 
 ; dired-tar
 (if (eq system-type 'gnu/linux)
-(setq dired-guess-shell-gnutar "tar"))
+    (setq dired-guess-shell-gnutar "tar")
+  (load "dired-tar"))
