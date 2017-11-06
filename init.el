@@ -407,9 +407,6 @@
   ("\\paragraph{%s}" . "\\paragraph*{%s}")
   ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 
-;;; eww google
-(setq eww-search-prefix "https://www.google.co.jp/search?q=")
-
 ;; ----------------------------------------
 ;; ミニバッファで日本語入力可にする
 ;; NTEmacs 23.3.92以降で有効、らしい
@@ -572,11 +569,17 @@
 (require 'twittering-mode)
 (setq twittering-use-master-password t)
 
+;;; eww google
+(setq eww-search-prefix "https://www.google.co.jp/search?q=")
+
 ;; eww function
 (setq browse-url-browser-function 'eww-browse-url)
 
 ;; eww background color rejection
 (setq-local eww-disable-colorize t)
+
+;; eww-disable-image and suppress white background
+(load "eww-preferences")
 
 ;; navi2ch
 (if (eq system-type 'gnu/linux)
