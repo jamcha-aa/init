@@ -22,6 +22,7 @@
 
 ;; windows-nt or gnu/linux files
 (add-to-list 'load-path "~/.emacs.d/environment")
+(add-to-list 'load-path "~/.emacs.d/elisp")
 
 ;; win input methods
 (if (eq system-type 'windows-nt)
@@ -601,7 +602,6 @@
   '(require 'ox-md nil t))
 
 ;; org-license
-(add-to-list 'load-path "~/.emacs.d/elisp")
 (load "org-license")
 (load "xah-dicts")
 
