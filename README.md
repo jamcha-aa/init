@@ -1,7 +1,7 @@
 # init.el
 author: jamcha (jamcha.aa@gmail.com)
 
-last update: Nov 6, 2017.
+last update: Nov 7, 2017.
 
 ### emacs init.el for Windows or GNU/Linux
 
@@ -24,6 +24,7 @@ This init.el targets Windows emacs or GNU/Linux emacs. Based on [gnupack](http:/
 - dired-tar (archive manager for Linux)
 - mew (for Linux)
 - navi2ch (comment out on Windows)
+- smart-newline (for Windows)
 - wanderlust (for Windows)
 - likemc enables dired to behave as a two panel file manager (e.g., [mc](https://github.com/MidnightCommander/mc))
 - mewconf and org-feed are my private settings of e-mail and RSS.

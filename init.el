@@ -721,3 +721,7 @@
 (if (eq system-type 'gnu/linux)
     (setq dired-guess-shell-gnutar "tar")
   (load "dired-tar"))
+
+;; Suppress C-J as Enter on Windows
+(if (eq system-type 'windows-nt)
+    (load "newline-settings"))
