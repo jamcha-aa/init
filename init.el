@@ -445,6 +445,9 @@
 ;; skk kutouten
 (setq-default skk-kutouten-type 'jp-en)
 
+;; skk function key
+(setq skk-j-mode-function-key-usage 'conversion)
+
 ;; mozc
 ;; sudo apt install emacs-mozc emacs-mozc-bin
 ;(require 'mozc)
