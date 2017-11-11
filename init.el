@@ -591,6 +591,7 @@
    ;(setq navi2ch-net-http-proxy "localhost:8080")
     (setq navi2ch-article-max-buffers 5)
     (setq navi2ch-article-auto-expunge t)
+    ;; https://mevius.5ch.net/test/read.cgi/unix/1405127170/838
     (setq navi2ch-list-valid-host-regexp
           (concat "\\("
                   (regexp-opt '(".2ch.net" ".5ch.net" ".bbspink.com" ".machibbs.com" ".machi.to"))
@@ -606,7 +607,9 @@
 
 ;; org-license
 (load "org-license")
-(load "xah-dicts")
+
+;; eww-weblio
+(load "eww-weblio")
 
 ;; dict tools
 (setq xah-lookup-browser-function 'eww)
