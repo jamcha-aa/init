@@ -26,6 +26,8 @@
 (defun eww-render--after (&rest _)
   (eww-set-start-at "www.weblio.jp" "^ *Weblio 辞書")
   ;; 他のサイトの設定も同様に追加できる
+  ;; weblio-en-ja (added by jamcha (jamcha.aa@gmail.com))
+  (eww-set-start-at "ejje.weblio.jp" "^ *Weblio 辞書")
   )
 ;;; [2017-01-14 Sat]バージョンごとに分岐
 (if (boundp 'eww-after-render-hook)     ;25.1
@@ -43,4 +45,11 @@
   (interactive (list
                 (region-or-read-string "Wikipedia: ")))
   (eww-browse-url (format "http://ja.wikipedia.org/wiki/%s"
+                      (upcase (url-hexify-string str)))))
+
+;;; weblio-en-ja (added by jamcha (jamcha.aa@gmail.com))
+(defun ejje (str)
+  (interactive (list
+                (region-or-read-string "Weblio: ")))
+  (eww-browse-url (format "http://ejje.weblio.jp/content/%s"
                       (upcase (url-hexify-string str)))))
