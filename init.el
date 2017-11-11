@@ -731,3 +731,6 @@
 ;; Suppress C-J as Enter on Windows
 (if (eq system-type 'windows-nt)
     (load "newline-settings"))
+
+;; reduce memory consumption
+(setq eww-history-limit 5)
