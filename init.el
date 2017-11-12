@@ -45,39 +45,6 @@
 (setq inhibit-startup-screen nil)
 
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
-;;; @ screen - mode line                                            ;;;
-;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
-
-;; 行番号の表示
-(line-number-mode t)
-
-;; 列番号の表示
-(column-number-mode t)
-
-;; モードライン カスタマイズ
-(if (eq system-type 'windows-nt)
-    (load "mode-line-win"))
-(if (eq system-type 'gnu/linux)
-    (load "mode-line-linux"))
-
-;; cp932エンコードの表記変更
-(coding-system-put 'cp932 :mnemonic ?P)
-(coding-system-put 'cp932-dos :mnemonic ?P)
-(coding-system-put 'cp932-unix :mnemonic ?P)
-(coding-system-put 'cp932-mac :mnemonic ?P)
-
-;; UTF-8エンコードの表記変更
-(coding-system-put 'utf-8 :mnemonic ?U)
-(coding-system-put 'utf-8-with-signature :mnemonic ?u)
-
-;; 改行コードの表記追加
-(setq eol-mnemonic-dos       ":Dos ")
-(setq eol-mnemonic-mac       ":Mac ")
-(setq eol-mnemonic-unix      ":Unx ")
-(setq eol-mnemonic-undecided ":??? ") 
-
-
-;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
 ;;; @ screen - buffer                                               ;;;
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
 
@@ -278,6 +245,39 @@
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
+
+;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
+;;; @ screen - mode line                                            ;;;
+;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
+
+;; 行番号の表示
+(line-number-mode t)
+
+;; 列番号の表示
+(column-number-mode t)
+
+;; モードライン カスタマイズ
+(if (eq system-type 'windows-nt)
+    (load "mode-line-win"))
+(if (eq system-type 'gnu/linux)
+    (load "mode-line-linux"))
+
+;; cp932エンコードの表記変更
+(coding-system-put 'cp932 :mnemonic ?P)
+(coding-system-put 'cp932-dos :mnemonic ?P)
+(coding-system-put 'cp932-unix :mnemonic ?P)
+(coding-system-put 'cp932-mac :mnemonic ?P)
+
+;; UTF-8エンコードの表記変更
+(coding-system-put 'utf-8 :mnemonic ?U)
+(coding-system-put 'utf-8-with-signature :mnemonic ?u)
+
+;; 改行コードの表記追加
+(setq eol-mnemonic-dos       ":Dos ")
+(setq eol-mnemonic-mac       ":Mac ")
+(setq eol-mnemonic-unix      ":Unx ")
+(setq eol-mnemonic-undecided ":??? ") 
+
 
 ;; coding: utf-8
 ;; mode: emacs-lisp

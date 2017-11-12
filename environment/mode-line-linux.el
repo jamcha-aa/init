@@ -1,26 +1,19 @@
-(setq-default
- mode-line-format
- `(
-   ""
-   ;w32-ime-mode-line-state-indicator
-   " "
-   mode-line-mule-info
-   mode-line-modified
-   mode-line-frame-identification
-   mode-line-buffer-identification
-   " "
-   " %[("
-   mode-name
-   mode-line-process
-   "%n"
-   ")%] "
-   (line-number-mode
-    (:eval
-     (format "L%%l/L%d " (count-lines (point-max) 1) )))
-   (column-number-mode " C%c ")
-   global-mode-string
-   (-3 . "%p")
-   (which-func-mode ("" which-func-format " "))
-   )
- )
-(setq mode-line-frame-identification " ")
+(require 'powerline)
+(powerline-default-theme)
+
+(set-face-attribute 'powerline-active1 nil
+                    :foreground "#0a74b9"
+                    :background "#2c3e50"
+                    :inherit 'mode-line)
+(set-face-attribute 'powerline-active2 nil
+                    :foreground "#f1c40f"
+                    :background "#7f8c8d"
+                    :inherit 'mode-line)
+(set-face-attribute 'powerline-inactive1 nil
+                    :foreground "#7f8c8d"
+                    :background "#34495e"
+                    :inherit 'mode-line)
+(set-face-attribute 'powerline-inactive2 nil
+                    :foreground "#95a5a6"
+                    :background "#2c3e50"
+                    :inherit 'mode-line)
