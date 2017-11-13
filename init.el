@@ -448,6 +448,9 @@
 ;; skk function key
 (setq skk-j-mode-function-key-usage 'conversion)
 
+;; skk annotation
+(setq skk-show-annotation t)
+
 ;; mozc
 ;; sudo apt install emacs-mozc emacs-mozc-bin
 ;(require 'mozc)
