@@ -24,10 +24,6 @@
 (add-to-list 'load-path "~/.emacs.d/environment")
 (add-to-list 'load-path "~/.emacs.d/elisp")
 
-;; win input methods
-(if (eq system-type 'windows-nt)
-    (load "im4win"))
-
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
 ;;; @ language - fontset                                            ;;;
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;

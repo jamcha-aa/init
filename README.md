@@ -16,6 +16,7 @@ This init.el targets Windows emacs or GNU/Linux emacs. Based on [gnupack](http:/
 - magit
 - migemo (and cmigemo)
 - org-license
+- powerline
 - twittering-mode
 - yasnippet
 - yatex
@@ -24,7 +25,6 @@ This init.el targets Windows emacs or GNU/Linux emacs. Based on [gnupack](http:/
 - dired-tar (archive manager for Linux)
 - mew (for Linux)
 - navi2ch (comment out on Windows)
-- powerline (for Linux)
 - smart-newline (for Windows)
 - wanderlust (for Windows)
 - likemc enables dired to behave as a two panel file manager (e.g., [mc](https://github.com/MidnightCommander/mc))
