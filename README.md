@@ -62,7 +62,7 @@ org-capture and org-agenda files are stored to OneDrive. Modify paths as you wan
 - Install packages of the previous section.
   + Caution: Some private files (e.g., mewconf.el) are missing.
 - Install "Source Han Sans Code-JP" fonts when you use linux.
-- Install "Source Han Sans Code-JP" and "Source Han Serif" fonts if you want to use an "Antique" combination (see init.el).
+- Install "Source Han Sans Code-JP" and "Source Han Serif" fonts if you want to use san-serif only for ascii (see init.el).
 - If you want to use skk-azik, put .skk to your home directory.
   + Edit .skk when you use US keyboards.
 - Enjoy.
