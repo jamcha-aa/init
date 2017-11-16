@@ -36,13 +36,19 @@
     (add-to-list 'default-frame-alist '(font . "源ノ角ゴシック Code JP R-12"))
   )
 
-;; 初期画面の非表示
-(setq inhibit-startup-message nil)
-(setq inhibit-startup-screen nil)
+;; http://extra-vision.blogspot.jp/2016/07/emacs.html
+;; If you want to use an "Antique" combination, choose below.
+;(create-fontset-from-ascii-font "源ノ角ゴシック Code JP R-14" nil "SourceHanMix")
+;(set-fontset-font "fontset-SourceHanMix" 'unicode "源ノ明朝 SemiBold-14" nil 'append)
+;(add-to-list 'default-frame-alist '(font . "fontset-SourceHanMix"))
 
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
 ;;; @ screen - buffer                                               ;;;
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
+
+;; 初期画面の非表示
+(setq inhibit-startup-message nil)
+(setq inhibit-startup-screen nil)
 
 ;; バッファ画面外文字の切り詰め表示
 (setq truncate-lines nil)

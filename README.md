@@ -1,7 +1,7 @@
 # init.el
 author: jamcha (jamcha.aa@gmail.com)
 
-last update: Nov 13, 2017.
+last update: Nov 17, 2017.
 
 ### emacs init.el for Windows or GNU/Linux
 
@@ -61,12 +61,13 @@ org-capture and org-agenda files are stored to OneDrive. Modify paths as you wan
 - Put init.el, environment, elisp into the .emacs.d.
 - Install packages of the previous section.
   + Caution: Some private files (e.g., mewconf.el) are missing.
-- Install "Source Han Sans Code-JP" fonts if you use linux.
+- Install "Source Han Sans Code-JP" fonts when you use linux.
+- Install "Source Han Sans Code-JP" and "Source Han Serif" fonts if you want to use an "Antique" combination (see init.el).
 - If you want to use skk-azik, put .skk to your home directory.
   + Edit .skk when you use US keyboards.
 - Enjoy.
 
-### init.el for bash on ubuntu on windows (Sep 2016, slightly obsolete)
+### init.el for bash on ubuntu on windows (Sep 2016, obsolete)
 
 I made an another version of init.el (in buw folder) especially for bash on ubuntu on windows. This version contains ddskk, helm, magit, org-license, twittering-mode, yatex, and xah-lookup. This init.el allows dired to open binary files with registered windows applications (e.g., open a pdf with adobe reader). I strongly recommend to use [wsl-terminal and cbwin](https://github.com/goreliu/wsl-terminal/releases) via bash accessing.
 
