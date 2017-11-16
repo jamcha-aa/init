@@ -443,6 +443,12 @@
 ;; skk annotation
 (setq skk-show-annotation t)
 
+;; skk sticky-key
+; win
+;(setq skk-sticky-key [non-convert])
+; linux
+;(setq skk-sticky-key [muhenkan])
+
 ;; mozc
 ;; sudo apt install emacs-mozc emacs-mozc-bin
 ;(require 'mozc)

@@ -3,9 +3,3 @@
 ;; if you use us keyboard, replace jp106 to en
 (setq skk-azik-keyboard-type 'jp106)
 (setq-default skk-kutouten-type 'jp-en)
-
-;; option
-; win
-;(setq skk-sticky-key [non-convert])
-; linux
-;(setq skk-sticky-key [muhenkan])
