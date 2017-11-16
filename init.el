@@ -38,8 +38,8 @@
 
 ;; http://extra-vision.blogspot.jp/2016/07/emacs.html
 ;; If you want to use an "Antique" combination, choose below.
-;(create-fontset-from-ascii-font "源ノ角ゴシック Code JP R-14" nil "SourceHanMix")
-;(set-fontset-font "fontset-SourceHanMix" 'unicode "源ノ明朝 SemiBold-14" nil 'append)
+;(create-fontset-from-ascii-font "源ノ角ゴシック Code JP R-12" nil "SourceHanMix")
+;(set-fontset-font "fontset-SourceHanMix" 'unicode "源ノ明朝 Medium-12" nil 'append)
 ;(add-to-list 'default-frame-alist '(font . "fontset-SourceHanMix"))
 
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
