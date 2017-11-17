@@ -449,6 +449,9 @@
 ;; skk annotation
 (setq skk-show-annotation t)
 
+;; auto close brackets
+(setq-default skk-auto-insert-paren t)
+
 ;; skk sticky-key
 ; win
 ;(setq skk-sticky-key [non-convert])
