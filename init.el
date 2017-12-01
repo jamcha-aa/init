@@ -440,6 +440,12 @@
 (if (eq system-type 'windows-nt)
     (setq skk-large-jisyo "~/.emacs.d/SKK-JISYO.L"))
 
+;; skk sticky-key
+; win
+;(setq skk-sticky-key [non-convert])
+; linux
+;(setq skk-sticky-key [muhenkan])
+
 ;; skk kutouten
 (setq-default skk-kutouten-type 'jp-en)
 
@@ -451,12 +457,6 @@
 
 ;; auto close brackets
 (setq-default skk-auto-insert-paren t)
-
-;; skk sticky-key
-; win
-;(setq skk-sticky-key [non-convert])
-; linux
-;(setq skk-sticky-key [muhenkan])
 
 ;; mozc
 ;; sudo apt install emacs-mozc emacs-mozc-bin
