@@ -744,3 +744,6 @@
 
 ;; reduce memory consumption
 (setq eww-history-limit 5)
+
+;; OS-independent fullscreen option
+; (toggle-frame-fullscreen)
