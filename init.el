@@ -350,7 +350,6 @@
 ;(require 'spaceline-config)
 ;(spaceline-spacemacs-theme)
 
-
 ;;; Org-mode
 (setq org-latex-classes '(("ltjsarticle"
             "\\documentclass{ltjsarticle}
