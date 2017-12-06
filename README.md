@@ -22,7 +22,6 @@ This init.el targets Windows emacs or GNU/Linux emacs. Based on [gnupack](http:/
 - yatex
 - xah-lookup
 - emms (comment out on Windows)
-- dired-tar (archive manager for Linux)
 - mew (for Linux)
 - navi2ch (comment out on Windows)
 - smart-newline (for Windows)
@@ -35,6 +34,9 @@ This init.el works well on an old netbook (such as Thinkpad X121e, which passmar
 I know emacs is a powerful programming environment. But so far I use emacs as a powerful word processor. Therefore I have excluded some popular programming support packages (e.g., auto-complete) from my settings.
 
 ### Customized keyboard shortcuts
+##### dired-tar (only for Linux)
+- On dired, press "shift-z" then it compress or extract file/directory.
+
 ##### org-mode
 - "C-c l" org-store-link
 - "C-c c" org-capture
@@ -61,8 +63,8 @@ org-capture and org-agenda files are stored to OneDrive. Modify paths as you wan
 - Put init.el, environment, elisp into the .emacs.d.
 - Install packages of the previous section.
   + Caution: Some private files (e.g., mewconf.el) are missing.
-- Install "Source Han Sans Code-JP" fonts when you use linux.
-- Install "Source Han Sans Code-JP" and "Source Han Serif" fonts if you want to use san-serif only for ascii (see init.el).
+- When you use linux, install "Source Han Sans Code-JP" fonts.
+- If you want to use san-serif only for ascii, install "Source Han Sans Code-JP" and "Source Han Serif" fonts (see init.el).
 - If you want to use skk-azik, put .skk to your home directory.
   + Edit .skk when you use US keyboards.
 - Enjoy.
