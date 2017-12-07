@@ -3,9 +3,7 @@ author: jamcha (jamcha.aa@gmail.com)
 
 last update: Nov 17, 2017.
 
-### emacs init.el for Windows or GNU/Linux
-
-[Rust :heart: Emacs](https://github.com/wilfred/remacs) compatible
+### emacs init.el for Windows or GNU/Linux ([Rust :heart: Emacs](https://github.com/wilfred/remacs) compatible)
 
 My emacs init.el keeps this rule, ["Simple, slim and sleek, yet powerful"](http://scribes.sourceforge.net/) _specifically for writing (not coding)_.
 
