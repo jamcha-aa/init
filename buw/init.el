@@ -512,7 +512,7 @@
 
   ;; migemo-dict のパスを指定
   ;; (setq migemo-dictionary "C~/.emacs.d/migemo-dict/utf-8")
-  (setq migemo-dictionary (expand-file-name "~/.emacs.d/dict/utf-8/migemo-dict"))
+  (setq migemo-dictionary (expand-file-name "/usr/share/cmigemo/utf-8/migemo-dict"))
   (setq migemo-user-dictionary nil)
   (setq migemo-regex-dictionary nil)
   
