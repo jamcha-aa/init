@@ -19,6 +19,7 @@ This init.el targets Windows emacs or GNU/Linux emacs. Based on [gnupack](http:/
 - powerline
 - twittering-mode
 - yasnippet
+- yasnippet-snippets
 - yatex
 - xah-lookup
 - emms (comment out on Windows)
@@ -62,9 +63,9 @@ org-capture and org-agenda files are stored to OneDrive. Modify paths as you wan
 ### Install
 - Put init.el, environment, elisp into the .emacs.d.
 - Install packages of the previous section.
-  + Caution: Some private files (e.g., mewconf.el) are missing.
+  + Edit org-capture section as you want.
+  + mew, twittering-mode and wanderlust requires additional individual settings (registering gmail imap, OAuth, etc).
 - When you use linux, install "Source Han Sans Code-JP" fonts.
-- If you want to use san-serif only for ascii, install "Source Han Sans Code-JP" and "Source Han Serif" fonts (see init.el).
 - If you want to use skk-azik, put .skk to your home directory.
   + Edit .skk when you use US keyboards.
 - Enjoy.
