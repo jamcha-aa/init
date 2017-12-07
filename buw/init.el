@@ -22,10 +22,7 @@
 
 ;; windows-nt or gnu/linux files
 (add-to-list 'load-path "~/.emacs.d/environment")
-
-;; win input methods
-;(if (eq system-type 'windows-nt)
-;    (load "im4win"))
+(add-to-list 'load-path "~/.emacs.d/elisp")
 
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
 ;;; @ language - fontset                                            ;;;
@@ -39,47 +36,19 @@
 ;    (add-to-list 'default-frame-alist '(font . "源ノ角ゴシック Code JP R-12"))
 ;  )
 
-;; 初期画面の非表示
-(setq inhibit-startup-message nil)
-(setq inhibit-startup-screen nil)
-
-;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
-;;; @ screen - mode line                                            ;;;
-;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
-
-;; 行番号の表示
-(line-number-mode t)
-
-;; 列番号の表示
-(column-number-mode t)
-
-;; モードライン カスタマイズ
-;(if (eq system-type 'windows-nt)
-;    (load "mode-line-win"))
-;(if (eq system-type 'gnu/linux)
-;    (load "mode-line-linux"))
-(load "mode-line-linux")
-
-;; cp932エンコードの表記変更
-(coding-system-put 'cp932 :mnemonic ?P)
-(coding-system-put 'cp932-dos :mnemonic ?P)
-(coding-system-put 'cp932-unix :mnemonic ?P)
-(coding-system-put 'cp932-mac :mnemonic ?P)
-
-;; UTF-8エンコードの表記変更
-(coding-system-put 'utf-8 :mnemonic ?U)
-(coding-system-put 'utf-8-with-signature :mnemonic ?u)
-
-;; 改行コードの表記追加
-(setq eol-mnemonic-dos       ":Dos ")
-(setq eol-mnemonic-mac       ":Mac ")
-(setq eol-mnemonic-unix      ":Unx ")
-(setq eol-mnemonic-undecided ":??? ") 
-
+;; http://extra-vision.blogspot.jp/2016/07/emacs.html
+;; If you want to use san-serif only for ascii, choose below.
+;(create-fontset-from-ascii-font "源ノ角ゴシック Code JP R-12" nil "SourceHanMix")
+;(set-fontset-font "fontset-SourceHanMix" 'unicode "源ノ明朝 Medium-12" nil 'append)
+;(add-to-list 'default-frame-alist '(font . "fontset-SourceHanMix"))
 
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
 ;;; @ screen - buffer                                               ;;;
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
+
+;; 初期画面の非表示
+(setq inhibit-startup-message nil)
+(setq inhibit-startup-screen nil)
 
 ;; バッファ画面外文字の切り詰め表示
 (setq truncate-lines nil)
@@ -279,6 +248,39 @@
              '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
 
+;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
+;;; @ screen - mode line                                            ;;;
+;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
+
+;; 行番号の表示
+(line-number-mode t)
+
+;; 列番号の表示
+(column-number-mode t)
+
+;; モードライン カスタマイズ
+(if (eq system-type 'windows-nt)
+    (load "mode-line-win"))
+(if (eq system-type 'gnu/linux)
+    (load "mode-line-linux"))
+
+;; cp932エンコードの表記変更
+(coding-system-put 'cp932 :mnemonic ?P)
+(coding-system-put 'cp932-dos :mnemonic ?P)
+(coding-system-put 'cp932-unix :mnemonic ?P)
+(coding-system-put 'cp932-mac :mnemonic ?P)
+
+;; UTF-8エンコードの表記変更
+(coding-system-put 'utf-8 :mnemonic ?U)
+(coding-system-put 'utf-8-with-signature :mnemonic ?u)
+
+;; 改行コードの表記追加
+(setq eol-mnemonic-dos       ":Dos ")
+(setq eol-mnemonic-mac       ":Mac ")
+(setq eol-mnemonic-unix      ":Unx ")
+(setq eol-mnemonic-undecided ":??? ") 
+
+
 ;; coding: utf-8
 ;; mode: emacs-lisp
 
@@ -312,7 +314,7 @@
 (setq-default indent-tabs-mode nil)
 
 ;;; 現在行に色をつける
-;(global-hl-line-mode 1)
+(global-hl-line-mode 1)
 
 ;;; ミニバッファ履歴を次回Emacs起動時にも保存する
 (savehist-mode 1)
@@ -337,11 +339,16 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
-;;; solarized-dark
-;(load-theme 'solarized-dark t)
+;;; solarized-light
+;(load-theme 'solarized-light t)
 
 ;;; flatui
 ;(load-theme 'flatui t) 
+
+;;; spacemacs-dark theme
+;(load-theme 'spacemacs-dark t)
+;(require 'spaceline-config)
+;(spaceline-spacemacs-theme)
 
 ;;; Org-mode
 (setq org-latex-classes '(("ltjsarticle"
@@ -408,9 +415,6 @@
   ("\\paragraph{%s}" . "\\paragraph*{%s}")
   ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 
-;;; eww google
-(setq eww-search-prefix "https://www.google.co.jp/search?q=")
-
 ;; ----------------------------------------
 ;; ミニバッファで日本語入力可にする
 ;; NTEmacs 23.3.92以降で有効、らしい
@@ -442,10 +446,22 @@
     (setq skk-large-jisyo "~/.emacs.d/SKK-JISYO.L"))
 
 ;; skk sticky-key
-(setq skk-sticky-key ";")
+; win
+;(setq skk-sticky-key [non-convert])
+; linux
+;(setq skk-sticky-key [muhenkan])
 
 ;; skk kutouten
 (setq-default skk-kutouten-type 'jp-en)
+
+;; skk function key
+(setq skk-j-mode-function-key-usage 'conversion)
+
+;; skk annotation
+(setq skk-show-annotation t)
+
+;; auto close brackets
+(setq-default skk-auto-insert-paren t)
 
 ;; mozc
 ;; sudo apt install emacs-mozc emacs-mozc-bin
@@ -460,7 +476,9 @@
 (setq org-return-follows-link t)
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 (if (eq system-type 'gnu/linux)
-    (setq org-directory "~/Documents/org/"))
+    (setq org-directory "~/OneDrive/org/"))
+(if (eq system-type 'windows-nt)
+    (setq org-directory "i:/OneDrive/org/"))
 (setq org-default-notes-file (concat org-directory "agenda.org"))
 ;; アジェンダ表示の対象ファイル
 (setq org-agenda-files (list org-directory))
@@ -535,9 +553,10 @@
 ;;; hiwin-mode
 ;(hiwin-activate)                           ;; hiwin-modeを有効化
 ;(set-face-background 'hiwin-face "#eee8d5") ;; 非アクティブウィンドウの背景色を設定
+;(set-face-background 'hiwin-face "#d3d3d3") ;; 非アクティブウィンドウの背景色を設定
 
 ;; カーソルの点滅を止める
-;(blink-cursor-mode 0)
+(blink-cursor-mode 0)
 
 ;; yatex
 (setq auto-mode-alist
@@ -565,21 +584,34 @@
 
 ;(setq font-lock-maximum-decoration '((c-mode . 1) (c++-mode . 1)(org-mode . 1)))
 
-;; wl
-;(require 'mime-setup)
-;(autoload 'wl "wl" "Wanderlust" t)
-;(autoload 'wl-draft "wl" "Write draft with Wanderlust." t)
-
 ;; twittering-mode
 (require 'twittering-mode)
-;(setq twittering-use-master-password t)
+(setq twittering-use-master-password t)
+
+;;; eww google
+(setq eww-search-prefix "https://www.google.co.jp/search?q=")
 
 ;; eww function
 (setq browse-url-browser-function 'eww-browse-url)
 
+;; eww background color rejection
+(setq-local eww-disable-colorize t)
+
+;; eww-disable-image and suppress white background
+(load "eww-preferences-BUW")
+
 ;; navi2ch
-;(if (eq system-type 'gnu/linux)
-;    (setq navi2ch-net-http-proxy "localhost:8080"))
+(if (eq system-type 'gnu/linux)
+   ; once you get board.txt, remove comment below
+   ;(setq navi2ch-net-http-proxy "localhost:8080")
+    (setq navi2ch-article-max-buffers 5)
+    (setq navi2ch-article-auto-expunge t)
+    ;; https://mevius.5ch.net/test/read.cgi/unix/1405127170/838
+    (setq navi2ch-list-valid-host-regexp
+          (concat "\\("
+                  (regexp-opt '(".2ch.net" ".5ch.net" ".bbspink.com" ".machibbs.com" ".machi.to"))
+                  "\\)\\'"))
+    (setq navi2ch-list-bbstable-url "http://menu.5ch.net/bbstable.html"))
 
 ;; magit
 (require 'magit)
@@ -589,8 +621,10 @@
   '(require 'ox-md nil t))
 
 ;; org-license
-(add-to-list 'load-path "~/.emacs.d/elisp")
 (load "org-license")
+
+;; eww-weblio
+(load "eww-weblio")
 
 ;; dict tools
 (setq xah-lookup-browser-function 'eww)
@@ -605,20 +639,43 @@
 ;(require 'org-octopress)
 
 ;; mew
-;(if (eq system-type 'gnu/linux)
-;    (load "mew"))
+(if (eq system-type 'gnu/linux)
+    (load "mew"))
 
 ;; conf el
-(if (eq system-type 'gnu/linux)
-    (setq load-path
-          (append '(
-                    "~/.emacs.d/conf"
-                    ) load-path)))
+(setq load-path
+      (append '(
+                "~/.emacs.d/conf"
+                ) load-path))
 
 ;; conf files
-;(cond ((eq system-type 'gnu/linux)
-  (load "org-feeds")
-;  (load "mewconf")))
+(cond ((eq system-type 'gnu/linux)
+       (load "mewconf")))
+(load "org-feeds")
+
+;; http://suzuki.tdiary.net/20140813.html#c04
+(if (eq system-type 'gnu/linux)
+(when (and (fboundp 'shr-render-region)
+           ;; \\[shr-render-region] requires Emacs to be compiled with libxml2.
+           (fboundp 'libxml-parse-html-region))
+  (setq mew-prog-text/html 'shr-render-region))) ;; 'mew-mime-text/html-w3m
+
+;;; wl
+;(if (eq system-type 'windows-nt)
+;    (autoload 'wl "wl" "Wanderlust" t)
+;  (autoload 'wl-draft "wl" "Write draft with Wanderlust." t)
+
+;  ;; http://www.otacky.jp/otaku_comm-14Q4.html
+;  (autoload 'w3m "w3m" "Interface for w3m on Emacs." t)
+;  (setq w3m-home-page "https://github.com/jamcha-aa")
+;  (setq w3m-key-binding 'info)
+;  (setq w3m-fill-column 80)
+;  
+;  (setq mime-setup-enable-inline-html 'shr)
+;  (require 'mime-setup)
+;  (eval-after-load 'shr
+;    '(defun shr-colorize-region (start end fg &optional bg)
+;       nil)))
 
 ;; Helm
 (setq dired-bind-jump nil) ;;skkとの競合を回避する
@@ -637,16 +694,63 @@
 ;; helm-swoop
 ;(require 'helm-swoop)
 
-;; win git settings
+;;; win git settings
 ;(if (eq system-type 'windows-nt)
 ;    (progn
-;      (setq exec-path (add-to-list 'exec-path "I:/Program Files/Git/bin"))
-;      (setenv "PATH" (concat "I:\\Program Files\\Git\\bin;" (getenv "PATH")))
-                                        ;(setenv "GIT_ASKPASS" "git-gui--askpass")
+;      (setq exec-path (add-to-list 'exec-path "C:/Program Files/Git/bin"))
+;      (setenv "PATH" (concat "C:\\Program Files\\Git\\bin;" (getenv "PATH")))
+;      (setenv "GIT_ASKPASS" "git-gui--askpass")
 ;      (setenv "SSH_ASKPASS" "git-gui--askpass")))
 
 ;; disable-mouse
 ;(require 'disable-mouse)
 ;(global-disable-mouse-mode)
+
+;; like mc
+(load "likemc")
+
+;; yasnippet
+;; 自分用・追加用テンプレート -> mysnippetに作成したテンプレートが格納される
+(require 'yasnippet)
+(setq yas-snippet-dirs
+      '("~/.emacs.d/mysnippets"
+        "~/.emacs.d/yasnippets"
+        ))
+
+;; 既存スニペットを挿入する
+(define-key yas-minor-mode-map (kbd "C-x i i") 'yas-insert-snippet)
+;; 新規スニペットを作成するバッファを用意する
+(define-key yas-minor-mode-map (kbd "C-x i n") 'yas-new-snippet)
+;; 既存スニペットを閲覧・編集する
+(define-key yas-minor-mode-map (kbd "C-x i v") 'yas-visit-snippet-file)
+
+(yas-global-mode 1)
+
+;; http://qiita.com/sawa-@github/items/0efc5b43b78d0695eb0e
+;; <C-t>でウィンドウ切り替え
+(global-set-key (kbd "C-t") 'other-window)
+
+;; Dired用にウィンドウ切り替え設定
+(add-hook 'dired-mode-hook
+      (lambda ()
+        (define-key dired-mode-map (kbd "C-t") 'other-window)))
+
+;; partial frame truncate
+(setq truncate-partial-width-windows nil)
+
+; dired-tar
+(if (eq system-type 'gnu/linux)
+    (setq dired-guess-shell-gnutar "tar")
+  (load "dired-tar"))
+
+;; Suppress C-J as Enter on Windows
+(if (eq system-type 'windows-nt)
+    (load "newline-settings"))
+
+;; reduce memory consumption
+(setq eww-history-limit 5)
+
+;; OS-independent fullscreen option
+; (toggle-frame-fullscreen)
 
 (load "diredBUW")
