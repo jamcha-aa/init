@@ -64,6 +64,7 @@ org-capture and org-agenda files are stored to OneDrive. Modify paths as you wan
 - Put init.el, environment, elisp into the .emacs.d.
 - Install packages of the previous section.
   + Edit org-capture section as you want.
+  + When you use Windows, put [SKK-JISYO.L](http://openlab.ring.gr.jp/skk/wiki/wiki.cgi?page=SKK%BC%AD%BD%F1#p7) to your home directory.
   + mew, twittering-mode and wanderlust requires additional individual settings (registering gmail imap, OAuth, etc).
 - When you use linux, install "Source Han Sans Code-JP" fonts.
 - If you want to use skk-azik, put .skk to your home directory.
