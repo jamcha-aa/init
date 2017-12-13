@@ -607,6 +607,9 @@
 ;; eww-disable-image and suppress white background
 (load "eww-preferences")
 
+;; eww set default-font
+(setq shr-use-fonts nil)
+
 ;; navi2ch
 (if (eq system-type 'gnu/linux)
    ; once you get board.txt, remove comment below
