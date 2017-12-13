@@ -355,6 +355,7 @@
 ;(spaceline-spacemacs-theme)
 
 ;;; Org-mode
+;; https://texwiki.texjp.org/?Emacs%2FOrg%20mode
 (setq org-latex-classes '(("ltjsarticle"
             "\\documentclass{ltjsarticle}
 \\usepackage{graphicx}
@@ -377,6 +378,7 @@
 
 (require 'ox-latex)
 
+;; https://texwiki.texjp.org/?Emacs%2FOrg%20mode
 (add-to-list 'org-latex-classes
              '("ltjsarticle"
                "\\documentclass[12pt,a4paper]{ltjsarticle}
@@ -391,10 +393,9 @@
   ("\\paragraph{%s}" . "\\paragraph*{%s}")
   ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 
-
-
 (require 'ox-beamer)
 
+;; https://texwiki.texjp.org/?Emacs%2FOrg%20mode
 (add-to-list 'org-latex-classes
              '("beamer"
                "\\documentclass[presentation,12pt]{beamer}
@@ -474,6 +475,7 @@
 ;(setq default-input-method "japanese-mozc")
 
 ;; org-mode & org-capture
+;; https://d.hatena.ne.jp/tamura70/20100208/org
 ;; (save-window-excursion (shell-command (format "emacs-test -l test-minimum -l %s %s &" buffer-file-name buffer-file-name)))
 (require 'org-install)
 (setq org-startup-truncated nil)
@@ -566,28 +568,13 @@
 (blink-cursor-mode 0)
 
 ;; yatex
+;; https://texwiki.texjp.org/?YaTeX
 (setq auto-mode-alist
       (cons (cons "\\.tex$" 'yatex-mode) auto-mode-alist))
 (autoload 'yatex-mode "yatex" "Yet Another LaTeX mode" t)
 (setq tex-command "lualatex")
 (setq YaTeX-kanji-code nil)
 (setq YaTeX-latex-message-code 'utf-8)
-
-;; org lighter
-;(setq jit-lock-context-time 5.0)
-;(setq jit-lock-defer-time 1.0)
-;;(setq jit-lock-stealth-time ;5.0
-                                        ;20.0)
-;(setq jit-lock-stealth-time 20.0)
-;(setq jit-lock-stealth-verbose nil)
-;(setq jit-lock-stealth-nice 0.5)
-;;(setq jit-lock-stealth-load ;50
-;300)
-;;(setq jit-lock-chunk-size ;100
-;20)
-;(setq jit-lock-stealth-load 300)
-;(setq jit-lock-chunk-size 20)
-
 
 ;(setq font-lock-maximum-decoration '((c-mode . 1) (c++-mode . 1)(org-mode . 1)))
 
@@ -705,6 +692,7 @@
 ;(require 'helm-swoop)
 
 ;; win git settings
+;; http://stackoverflow.com/questions/16884377/magit-is-very-slow-when-committing-on-windows
 (if (eq system-type 'windows-nt)
     (progn
       (setq exec-path (add-to-list 'exec-path "C:/Program Files/Git/bin"))
@@ -720,6 +708,7 @@
 (load "likemc")
 
 ;; yasnippet
+;; https://gist.github.com/tado/3b032649615b75cb2d0b
 ;; 自分用・追加用テンプレート -> mysnippetに作成したテンプレートが格納される
 (require 'yasnippet)
 (setq yas-snippet-dirs
@@ -727,6 +716,7 @@
         "~/.emacs.d/yasnippets"
         ))
 
+;; https://fukuyama.co/yasnippet
 ;; 既存スニペットを挿入する
 (define-key yas-minor-mode-map (kbd "C-x i i") 'yas-insert-snippet)
 ;; 新規スニペットを作成するバッファを用意する
@@ -736,10 +726,11 @@
 
 (yas-global-mode 1)
 
-;; http://qiita.com/sawa-@github/items/0efc5b43b78d0695eb0e
+;; https://qiita.com/sawa-@github/items/0efc5b43b78d0695eb0e
 ;; <C-t>でウィンドウ切り替え
 (global-set-key (kbd "C-t") 'other-window)
 
+;; https://qiita.com/sawa-@github/items/0efc5b43b78d0695eb0e
 ;; Dired用にウィンドウ切り替え設定
 (add-hook 'dired-mode-hook
       (lambda ()
