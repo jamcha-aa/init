@@ -476,9 +476,11 @@
 (setq org-return-follows-link t)
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 (if (eq system-type 'gnu/linux)
-    (setq org-directory "~/OneDrive/org/"))
+    ;(setq org-directory "~/OneDrive/org/"))
+    (setq org-directory "~/.emacs.d/org/"))
 (if (eq system-type 'windows-nt)
-    (setq org-directory "i:/OneDrive/org/"))
+    ;(setq org-directory "i:/OneDrive/org/"))
+    (setq org-directory "~/.emacs.d/org/"))
 (setq org-default-notes-file (concat org-directory "agenda.org"))
 ;; アジェンダ表示の対象ファイル
 (setq org-agenda-files (list org-directory))

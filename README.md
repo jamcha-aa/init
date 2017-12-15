@@ -59,7 +59,7 @@ org-capture and org-agenda files are stored to OneDrive. Modify paths as you wan
 - "C-t" works as "C-x o"
 
 ### Install
-- Put init.el, environment, elisp into the .emacs.d.
+- Put init.el, environment, elisp, conf, and org into the .emacs.d.
 - Install packages of the previous section.
   + Edit org-capture section as you want.
   + When you use Windows, put [SKK-JISYO.L](http://openlab.ring.gr.jp/skk/wiki/wiki.cgi?page=SKK%BC%AD%BD%F1#p7) and [dict folder (in cmigemo)](https://www.kaoriya.net/software/cmigemo/) to your home directory.
@@ -71,13 +71,13 @@ org-capture and org-agenda files are stored to OneDrive. Modify paths as you wan
 - Enjoy.
 
 ### init.el for Windows Subsystem for Linux (WSL, previously called "bash on ubuntu on windows")
-last update: Dec 7, 2017.
+last update: Dec 16, 2017.
 
 I made an another version of init.el (in buw folder) for WSL. This version contains ddskk, helm, magit, mew, navi2ch, org-license, powerline, twittering-mode, yasnippet, yatex, and xah-lookup. This init.el allows dired to open binary files with registered windows applications (e.g., open a pdf with adobe reader). I strongly recommend to use [wsltty](https://github.com/mintty/wsltty) via bash accessing. This init.el is also compatible with [Rust :heart: Emacs](https://github.com/wilfred/remacs).
 
 #### Usage
 - Install [wslstart](https://www49.atwiki.jp/ntemacs/pages/62.html)
 - Enter buw folder.
-- Put init.el, environment, elisp into your .emacs.d.
+- Put init.el, environment, elisp, conf, and org into your .emacs.d.
 - Install packages.
 - Enjoy.
