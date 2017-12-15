@@ -1,13 +1,13 @@
 # init.el
 author: jamcha (jamcha.aa@gmail.com)
 
-last update: Nov 17, 2017.
+last update: Dec 16, 2017.
 
 ### emacs init.el for Windows or GNU/Linux ([Rust :heart: Emacs](https://github.com/wilfred/remacs) compatible)
 
 My emacs init.el keeps this rule, ["Simple, slim and sleek, yet powerful"](http://scribes.sourceforge.net/) _specifically for writing (not coding)_.
 
-This init.el targets Windows emacs or GNU/Linux emacs. Based on [gnupack](http://gnupack.osdn.jp/docs/latest/UsersGuide.html)'s init.el, I added following packages to work without gnupack, because gnupack is a large package to install on poor storage (eMMC 32gb) netbooks with latex system. Almost all of codes were cited from many emacs sensei on the web.
+This init.el targets Windows emacs or GNU/Linux emacs. Based on [gnupack](http://gnupack.osdn.jp/docs/latest/UsersGuide.html)'s init.el, I added following packages to work without gnupack, because gnupack is a large package to install on poor storage (eMMC 32gb) netbooks with latex system. Almost all codes were cited from many emacs sensei on the web.
 
 - ddskk (and SKK-JISYO.L), skk-azik compatible.
 - flatui
@@ -28,11 +28,9 @@ This init.el targets Windows emacs or GNU/Linux emacs. Based on [gnupack](http:/
 - smart-newline (for Windows)
 - wanderlust (for Windows)
 - likemc enables dired to behave as a two panel file manager (e.g., [mc](https://github.com/MidnightCommander/mc))
-- mewconf and org-feed are my private settings of e-mail and RSS.
+- mewconf and org-feed are personal settings of e-mail and RSS.
 
-This init.el works well on an old netbook (such as Thinkpad X121e, which passmark cpu score is 616). Emacs replaces heavy web applications to light-weight elisp packages (e.g., firefox to eww, gmail to mew, etc).
-
-I know emacs is a powerful programming environment. But so far I use emacs as a powerful word processor. Therefore I have excluded some popular programming support packages (e.g., auto-complete) from my settings.
+This init.el works well on an old netbook (such as Thinkpad X121e, which passmark cpu score is 616). Emacs replaces heavy web applications to light-weight elisp packages (e.g., firefox to eww, gmail to mew, etc). 
 
 ### Customized keyboard shortcuts
 ##### dired-tar (only for Linux)
@@ -66,6 +64,7 @@ org-capture and org-agenda files are stored to OneDrive. Modify paths as you wan
   + Edit org-capture section as you want.
   + When you use Windows, put [SKK-JISYO.L](http://openlab.ring.gr.jp/skk/wiki/wiki.cgi?page=SKK%BC%AD%BD%F1#p7) and [dict folder (in cmigemo)](https://www.kaoriya.net/software/cmigemo/) to your home directory.
   + mew, twittering-mode and wanderlust requires additional individual settings (registering gmail imap, OAuth, etc).
+  + mew requires additional certs files. Download it from https://mew.org/Release/, rename as ".certs" then put it your home directory.
 - When you use linux, install "Source Han Sans Code-JP" fonts.
 - If you want to use skk-azik, put .skk to your home directory.
   + Edit .skk when you use US keyboards.
