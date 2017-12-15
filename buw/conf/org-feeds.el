@@ -26,5 +26,5 @@ containing the properties `:guid' and `:item-full-text'."
 (setq org-feed-alist nil)
 (add-to-list 'org-feed-alist
       '("GIGAZINE" "http://gigazine.net/index.php?/news/rss_2.0/"
-         "~/OneDrive/org/feeds.org" "GIGAZINE"
+         "~/org/feeds.org" "GIGAZINE"
          :parse-feed org-feed-parse-rdf-feed))
