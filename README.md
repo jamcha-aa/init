@@ -42,8 +42,6 @@ This init.el works well on an old netbook (such as Thinkpad X121e, which passmar
 - "C-c a" org-agenda
 - "C-c b" org-iswitchb
 
-org-capture and org-agenda files are stored to OneDrive. Modify paths as you want.
-
 ##### likemc
 - "c" dired-copy-to-other-window
 - "r" dired-move-to-other-window
