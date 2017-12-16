@@ -1,3 +1,4 @@
+; https://ja.osdn.net/projects/gnupack/ gnupack11-devel
 (setq-default
  mode-line-format
  `(
