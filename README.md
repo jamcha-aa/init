@@ -5,7 +5,7 @@ last update: Dec 16, 2017.
 
 ### emacs init.el for Windows or GNU/Linux 25.1 or later ([Rust :heart: Emacs](https://github.com/wilfred/remacs) compatible)
 
-["Simple, slim and sleek, yet powerful"](http://scribes.sourceforge.net/) _specifically for writing (not coding)_.
+My init.el ideal is ["Simple, slim and sleek, yet powerful"](http://scribes.sourceforge.net/) _specifically for writing (not coding)_.
 
 This init.el targets Windows emacs or GNU/Linux emacs. Based on [gnupack](http://gnupack.osdn.jp/docs/latest/UsersGuide.html)'s init.el, I added following packages to work without gnupack, because gnupack is a large package to install on poor storage (eMMC 32gb) netbooks with latex system. Almost all codes come from many emacs sensei on the web.
 
