@@ -267,6 +267,7 @@
 ;; choose this if powerline were heavy
 ;(if (eq system-type 'gnu/linux)
 ;    (load "gp-mode-line-linux"))
+;    (load "wr-mode-line-linux")) ; very simple
 
 ;; cp932エンコードの表記変更
 (coding-system-put 'cp932 :mnemonic ?P)
