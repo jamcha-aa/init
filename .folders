@@ -1,0 +1,6 @@
+;; http://opamp.hatenablog.jp/entry/2015/01/07/210407
+%inbox  "Inbox"
+%Sent   "Sent"
+%Trash  "Trash"
+%Junk   "Junk"
++draft  "Draft"
