@@ -39,7 +39,8 @@
 ;; http://extra-vision.blogspot.jp/2016/07/emacs.html
 ;; If you want to use san-serif only for ascii, choose below.
 ;(create-fontset-from-ascii-font "源ノ角ゴシック Code JP R-12" nil "SourceHanMix")
-;(set-fontset-font "fontset-SourceHanMix" 'unicode "源ノ明朝 Medium-12" nil 'append)
+;; (set-fontset-font "fontset-SourceHanMix" 'unicode "源ノ明朝 Medium-12" nil 'append) ; CJK replace
+;(set-fontset-font "fontset-SourceHanMix" '(?ぁ . ?ヿ) "霧明朝:Bold-14") ; Kana replace ; Kana replace
 ;(add-to-list 'default-frame-alist '(font . "fontset-SourceHanMix"))
 
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
