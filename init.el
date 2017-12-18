@@ -34,7 +34,6 @@
 
 (if (eq system-type 'gnu/linux)
     (add-to-list 'default-frame-alist '(font . "源ノ角ゴシック Code JP R-12"))
-;    (setq shr-current-font '(font . "源ノ角ゴシック Code JP R-12"))
   )
 
 ;; http://extra-vision.blogspot.jp/2016/07/emacs.html
