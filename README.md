@@ -7,7 +7,7 @@ last update: Dec 16, 2017.
 
 My init.el ideal is ["Simple, slim and sleek, yet powerful"](http://scribes.sourceforge.net/) _specifically for writing (not coding)_.
 
-This init.el targets Windows emacs or GNU/Linux emacs. Based on [gnupack](http://gnupack.osdn.jp/docs/latest/UsersGuide.html)'s init.el, I added following packages to work without gnupack, because gnupack is a large package to install on poor storage (eMMC 32gb) netbooks with latex system. Almost all codes come from many emacs sensei on the web.
+This init.el targets Windows emacs or GNU/Linux emacs. Based on [gnupack](http://gnupack.osdn.jp/docs/latest/UsersGuide.html)'s init.el, I added following packages to work without gnupack, because gnupack is a large package to install on poor storage (eMMC 32gb) netbooks with latex system. Almost all codes are derived from many emacs sensei on the web.
 
 - ddskk (and SKK-JISYO.L), skk-azik compatible.
 - flatui
