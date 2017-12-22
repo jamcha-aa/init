@@ -440,6 +440,9 @@
 (require 'skk-auto)
 (global-set-key (kbd "C-x C-j") 'skk-mode)
 
+;; require utf-8 SKK-JISYO
+;(setq skk-jisyo-code 'utf-8)
+
 ;; skk hokan
 (setq skk-dcomp-activate t)
 
