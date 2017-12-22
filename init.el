@@ -650,7 +650,9 @@
 ;; conf files
 (cond ((eq system-type 'gnu/linux)
        (load "mewconf")))
-(load "org-feeds")
+; once you get feeds.org index, comment out (load "org-feeds.1st") and remove comment (load "org-feeds")
+(load "org-feeds.1st")
+;(load "org-feeds")
 
 ;; http://suzuki.tdiary.net/20140813.html#c04
 (if (eq system-type 'gnu/linux)

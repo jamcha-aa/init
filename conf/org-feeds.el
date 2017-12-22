@@ -1,4 +1,4 @@
-; http://d.hatena.ne.jp/tamura70/20100225/org
+;http://d.hatena.ne.jp/tamura70/20100225/org
 (defun org-feed-parse-rdf-feed (buffer)
   "Parse BUFFER for RDF feed entries.
 Returns a list of entries, with each entry a property list,
@@ -24,6 +24,10 @@ containing the properties `:guid' and `:item-full-text'."
 ;(setq org-feed-retrieval-method 'wget)
 (setq org-feed-retrieve-method 'curl)
 (setq org-feed-alist nil)
+(add-to-list 'org-feed-alist
+      '("POSTD" "http://postd.cc/feed/"
+        "~/org/feeds.org" "POSTD"
+        :parse-feed org-feed-parse-rdf-feed))
 (add-to-list 'org-feed-alist
       '("GIGAZINE" "http://gigazine.net/index.php?/news/rss_2.0/"
          "~/org/feeds.org" "GIGAZINE"
