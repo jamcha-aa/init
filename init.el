@@ -653,7 +653,7 @@
 ;; conf files
 (cond ((eq system-type 'gnu/linux)
        (load "mewconf")))
-; if org-feeds did not get entry, try org-feeds.dispo
+; if org-feeds did not get entries, try org-feeds.dispo
 ;(load "org-feeds.dispo")
 (load "org-feeds")
 
