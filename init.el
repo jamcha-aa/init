@@ -474,7 +474,7 @@
 ;; sekka
 ;(require 'sekka)
 ;(global-sekka-mode 1)
-
+;(setq sekka-sticky-shift t)
 
 ;; mozc
 ;; sudo apt install emacs-mozc emacs-mozc-bin
