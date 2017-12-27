@@ -471,6 +471,11 @@
 ;; auto close brackets
 (setq-default skk-auto-insert-paren t)
 
+;; sekka
+;(require 'sekka)
+;(global-sekka-mode 1)
+
+
 ;; mozc
 ;; sudo apt install emacs-mozc emacs-mozc-bin
 ;(require 'mozc)
