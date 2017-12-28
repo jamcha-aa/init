@@ -622,6 +622,8 @@
 
 ;; magit
 (require 'magit)
+(if (eq system-type 'windows-nt)
+    (setq magit-git-executable "C:/Program Files/Git/bin/git.exe"))
 
 ;; org-markdown
 (eval-after-load "org"
