@@ -349,6 +349,9 @@
 ;;; flatui
 (load-theme 'flatui t) 
 
+;;; warm-night-mode
+;(load-theme 'warm-night t) 
+
 ;;; spacemacs-dark theme
 ;(load-theme 'spacemacs-dark t)
 ;(require 'spaceline-config)
