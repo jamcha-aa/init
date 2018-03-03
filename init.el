@@ -770,3 +770,9 @@
 
 ;; OS-independent fullscreen option
 ; (toggle-frame-fullscreen)
+
+;; exwm
+;(require 'exwm)
+;(require 'exwm-config)
+;(exwm-config-default)
+;(setq exwm-workspace-number 5)
