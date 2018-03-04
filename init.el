@@ -754,7 +754,7 @@
         (define-key dired-mode-map (kbd "C-t") 'other-window)))
 
 ;; partial frame truncate
-(setq truncate-partial-width-windows nil)
+;(setq truncate-partial-width-windows nil)
 
 ; dired-tar
 (if (eq system-type 'gnu/linux)
@@ -775,4 +775,4 @@
 ;(require 'exwm)
 ;(require 'exwm-config)
 ;(exwm-config-default)
-;(setq exwm-workspace-number 5)
+
