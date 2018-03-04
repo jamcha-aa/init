@@ -54,7 +54,7 @@
 (setq truncate-lines nil)
 
 ;; ウィンドウ縦分割時のバッファ画面外文字の切り詰め表示
-(setq truncate-partial-width-windows t)
+(setq truncate-partial-width-windows nil) ; use toggle-truncate-lines
 
 ;; 同一バッファ名にディレクトリ付与
 (require 'uniquify)
@@ -752,9 +752,6 @@
 (add-hook 'dired-mode-hook
       (lambda ()
         (define-key dired-mode-map (kbd "C-t") 'other-window)))
-
-;; partial frame truncate
-;(setq truncate-partial-width-windows nil)
 
 ; dired-tar
 (if (eq system-type 'gnu/linux)
