@@ -628,6 +628,11 @@
 (if (eq system-type 'windows-nt)
     (setq magit-git-executable "C:/Program Files/Git/bin/git.exe"))
 
+;(if (eq system-type 'gnu/linux)
+;    (require 'exec-path-from-shell)
+;  (exec-path-from-shell-copy-env "SSH_AGENT_PID")
+;  (exec-path-from-shell-copy-env "SSH_AUTH_SOCK"))
+
 ;; org-markdown
 (eval-after-load "org"
   '(require 'ox-md nil t))
