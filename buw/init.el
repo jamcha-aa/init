@@ -618,6 +618,21 @@
 ;; magit
 (require 'magit)
 
+;; http://www.clear-code.com/blog/2012/4/3.html
+;; 文字単位での変更箇所は色を反転して強調
+(set-face-attribute 'diff-refine-change nil
+                    :foreground nil :background nil
+                    :weight 'bold :inverse-video t)
+
+;; diffを表示したらすぐに文字単位での強調表示も行う
+(defun diff-mode-refine-automatically ()
+  (diff-auto-refine-mode t))
+(add-hook 'diff-mode-hook 'diff-mode-refine-automatically)
+
+;; diffを表示しているときに文字単位での変更箇所も強調表示する
+;; 'allではなくtにすると現在選択中のhunkのみ強調表示する
+(setq magit-diff-refine-hunk 'all)
+
 ;; org-markdown
 (eval-after-load "org"
   '(require 'ox-md nil t))

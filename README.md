@@ -1,7 +1,7 @@
 # init.el
 author: jamcha (jamcha.aa@gmail.com)
 
-last update: Dec 16, 2017.
+last update: May 10, 2018.
 
 ### emacs init.el for Windows or GNU/Linux 25.1 or later ([Rust :heart: Emacs](https://github.com/wilfred/remacs) compatible)
 
@@ -69,7 +69,7 @@ This init works well on an old netbook (such as Thinkpad X121e, which passmark c
 - Enjoy.
 
 ### init.el for Windows Subsystem for Linux (WSL, previously called "bash on ubuntu on windows")
-last update: Dec 16, 2017.
+last update: May 10, 2018.
 
 I made an another version of init.el (in buw folder) for WSL. This version contains ddskk, helm, magit, mew, navi2ch, org-license, powerline, twittering-mode, yasnippet, yatex, and xah-lookup. This init.el allows dired to open binary files with registered windows applications (e.g., open a pdf with adobe reader). I strongly recommend to use [wsltty](https://github.com/mintty/wsltty) via bash accessing. This init.el is also compatible with [Rust :heart: Emacs](https://github.com/wilfred/remacs).
 
