@@ -804,3 +804,7 @@
 ;; Add these hooks in a suitable place (e.g., as done in exwm-config-default)
 ;(add-hook 'exwm-update-class-hook 'exwm-rename-buffer)
 ;(add-hook 'exwm-update-title-hook 'exwm-rename-buffer)
+
+;; switch-window for exwm
+;(setq switch-window-shortcut-style 'qwerty)
+;(global-set-key (kbd "C-x o") 'switch-window)
