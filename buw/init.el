@@ -380,7 +380,7 @@
 \\usepackage{amsmath}
 % \\usepackage{newtxtext,newtxmath}
 \\usepackage{graphicx}
-\\hypersetup{pdfencoding=auto}"
+\\usepackage[pdfencoding=auto]{hyperref}"
   ("\\section{%s}" . "\\section*{%s}")
   ("\\subsection{%s}" . "\\subsection*{%s}")
   ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
