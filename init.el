@@ -358,21 +358,6 @@
 ;(spaceline-spacemacs-theme)
 
 ;;; Org-mode
-;; https://texwiki.texjp.org/?Emacs%2FOrg%20mode
-(setq org-latex-classes '(("ltjsarticle"
-            "\\documentclass{ltjsarticle}
-\\usepackage{graphicx}
-\\usepackage[unicode=true,bookmarks=true]{hyperref}
-[NO-DEFAULT-PACKAGES]
-[PACKAGES]
-[EXTRA]"
-            ("\\section{%s}" . "\\section*{%s}")
-            ("\\subsection{%s}" . "\\subsection*{%s}")
-            ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-            ("\\paragraph{%s}" . "\\paragraph*{%s}")
-            ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))
-               ))
-
 ;;; org-mode latex
 (setq org-latex-default-class "ltjsarticle")
 
@@ -389,7 +374,12 @@
 \\usepackage{amsmath}
 % \\usepackage{newtxtext,newtxmath}
 \\usepackage{graphicx}
-\\usepackage[pdfencoding=auto]{hyperref}"
+\\usepackage[pdfencoding=auto]{hyperref}
+\\usepackage{luatexja-fontspec}
+\\setmainfont{Linux Libertine O}
+\\setmainjfont{Noto Serif CJK JP}
+\\setsansjfont{Noto Sans CJK JP}
+\\ltjsetparameter{jacharrange={-2}}"
   ("\\section{%s}" . "\\section*{%s}")
   ("\\subsection{%s}" . "\\subsection*{%s}")
   ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
