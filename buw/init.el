@@ -351,20 +351,6 @@
 ;(spaceline-spacemacs-theme)
 
 ;;; Org-mode
-(setq org-latex-classes '(("ltjsarticle"
-            "\\documentclass{ltjsarticle}
-\\usepackage{graphicx}
-\\usepackage[unicode=true,bookmarks=true]{hyperref}
-[NO-DEFAULT-PACKAGES]
-[PACKAGES]
-[EXTRA]"
-            ("\\section{%s}" . "\\section*{%s}")
-            ("\\subsection{%s}" . "\\subsection*{%s}")
-            ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-            ("\\paragraph{%s}" . "\\paragraph*{%s}")
-            ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))
-               ))
-
 ;;; org-mode latex
 (setq org-latex-default-class "ltjsarticle")
 
@@ -387,8 +373,6 @@
   ("\\paragraph{%s}" . "\\paragraph*{%s}")
   ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 
-
-
 (require 'ox-beamer)
 
 (add-to-list 'org-latex-classes
@@ -402,9 +386,14 @@
 % mathematical font
 \\usepackage{fontspec}
 % Japanese
-\\usepackage{luacode}
-\\usepackage{luatexja-otf}
-\\usepackage[ipaex]{luatexja-preset}
+%\\usepackage{luacode}
+%\\usepackage{luatexja-otf}
+%\\usepackage[ipaex]{luatexja-preset}
+\\usepackage{luatexja-fontspec}
+\\setmainfont{Linux Libertine O}
+\\setmainjfont{Noto Serif CJK JP}
+\\setsansjfont{Noto Sans CJK JP}
+\\ltjsetparameter{jacharrange={-2}}
 \\renewcommand{\\kanjifamilydefault}{\\gtdefault}
 %%
 %\\setbeamercovered{transparent}

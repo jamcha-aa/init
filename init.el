@@ -400,9 +400,14 @@
 % mathematical font
 \\usepackage{fontspec}
 % Japanese
-\\usepackage{luacode}
-\\usepackage{luatexja-otf}
-\\usepackage[ipaex]{luatexja-preset}
+%\\usepackage{luacode}
+%\\usepackage{luatexja-otf}
+%\\usepackage[ipaex]{luatexja-preset}
+\\usepackage{luatexja-fontspec}
+\\setmainfont{Linux Libertine O}
+\\setmainjfont{Noto Serif CJK JP}
+\\setsansjfont{Noto Sans CJK JP}
+\\ltjsetparameter{jacharrange={-2}}
 \\renewcommand{\\kanjifamilydefault}{\\gtdefault}
 %%
 %\\setbeamercovered{transparent}
