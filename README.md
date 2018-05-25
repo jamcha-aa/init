@@ -1,7 +1,7 @@
 # init.el
 author: jamcha (jamcha.aa@gmail.com)
 
-last update: May 11, 2018.
+last update: May 25, 2018.
 
 ### emacs init.el for Windows or GNU/Linux 25.1 or later ([Rust :heart: Emacs](https://github.com/wilfred/remacs) compatible)
 
