@@ -625,7 +625,7 @@
 
 ;; http://www.clear-code.com/blog/2012/4/3.html
 ;; 文字単位での変更箇所は色を反転して強調
-(set-face-attribute 'diff-refine-change nil
+(set-face-attribute 'diff-refine-changed nil
                     :foreground nil :background nil
                     :weight 'bold :inverse-video t)
 
