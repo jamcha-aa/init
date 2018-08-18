@@ -21,7 +21,6 @@
 (setq default-process-coding-system '(undecided-dos . utf-8-unix))
 
 ;; windows-nt or gnu/linux files
-(add-to-list 'load-path "~/.emacs.d/environment")
 (add-to-list 'load-path "~/.emacs.d/elisp")
 
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
@@ -259,14 +258,33 @@
 (column-number-mode t)
 
 ;; モードライン カスタマイズ
-(if (eq system-type 'windows-nt)
-    (load "mode-line-win"))
-(if (eq system-type 'gnu/linux)
-    (load "mode-line-linux"))
-;; choose this if powerline were heavy
-;(if (eq system-type 'gnu/linux)
-;    (load "gp-mode-line-linux"))
-;    (load "wr-mode-line-linux")) ; very simple
+;;; http://emacs.rubikitch.com/smart-mode-line/
+(require 'smart-mode-line)
+;;; この変数を定義しておかないとエラーになるバグあり
+(setq sml/active-background-color "gray24")
+;;; 桁番号も表示させる
+;(column-number-mode 1)
+;;; 読み込み専用バッファは%で表示
+(setq sml/read-only-char "%%")
+;;; 修正済みバッファは*で表示
+;(setq sml/modified-char "*")
+;;; helm-modeとauto-complete-modeのモードライン表示を隠す
+(setq sml/hidden-modes '(" Helm" " AC" " yas" " ElDoc"))
+;;; これがないと表示がはみでる
+;;(setq sml/extra-filler -10)
+;;; sml/replacer-regexp-listはモードラインでのファイル名表示方法を制御
+(add-to-list 'sml/replacer-regexp-list '("^.+/junk/[0-9]+/" ":J:") t)
+;;; これを入れないとsmart-mode-lineを読み込むたびに
+;; Loading a theme can run Lisp code.  Really load? (y or n)
+;;; と聞いてくる。
+(setq sml/no-confirm-load-theme t)
+
+(sml/setup)
+(sml/apply-theme 'respectful)
+;;; その他のthemeを設定
+;;(sml/apply-theme 'dark)
+;;(sml/apply-theme 'light)
+
 
 ;; cp932エンコードの表記変更
 (coding-system-put 'cp932 :mnemonic ?P)
@@ -568,9 +586,9 @@
   )
 
 ;;; hiwin-mode
-(hiwin-activate)                           ;; hiwin-modeを有効化
+;(hiwin-activate)                           ;; hiwin-modeを有効化
 ;(set-face-background 'hiwin-face "#eee8d5") ;; 非アクティブウィンドウの背景色を設定
-(set-face-background 'hiwin-face "#d3d3d3") ;; 非アクティブウィンドウの背景色を設定
+;(set-face-background 'hiwin-face "#d3d3d3") ;; 非アクティブウィンドウの背景色を設定
 
 ;; カーソルの点滅を止める
 (blink-cursor-mode 0)
@@ -647,20 +665,17 @@
 (eval-after-load "org"
   '(require 'ox-md nil t))
 
-;; org-license
-(load "org-license")
-
 ;; eww-weblio
 (load "eww-weblio")
 
 ;; dict tools
 (setq xah-lookup-browser-function 'eww)
 
-;; emms
-(cond ((eq system-type 'gnu/linux)
-  (require 'emms-setup)
-  (emms-standard)
-  (emms-default-players)))
+;;; emms
+;; (cond ((eq system-type 'gnu/linux)
+;;  (require 'emms-setup)
+;;  (emms-standard)
+;;  (emms-default-players)))
 
 ;; org-octopress
 ;(require 'org-octopress)
@@ -801,5 +816,17 @@
 ;(add-hook 'exwm-update-title-hook 'exwm-rename-buffer)
 
 ;; switch-window for exwm
-;(setq switch-window-shortcut-style 'qwerty)
-;(global-set-key (kbd "C-x o") 'switch-window)
+(setq switch-window-shortcut-style 'qwerty)
+(global-set-key (kbd "C-x o") 'switch-window)
+
+;;; ssh passthrough for GitHub
+;; (require 'exec-path-from-shell)
+;; (exec-path-from-shell-copy-env "SSH_AGENT_PID")
+;; (exec-path-from-shell-copy-env "SSH_AUTH_SOCK")
+
+;;; wc-mode
+(require 'wc-mode)
+;; Suggested setting
+(global-set-key "\C-cw" 'wc-mode)
+
+

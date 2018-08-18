@@ -1,7 +1,7 @@
 # init.el
 author: jamcha (jamcha.aa@gmail.com)
 
-last update: May 25, 2018.
+last update: Aug 19, 2018.
 
 ### emacs init.el for Windows or GNU/Linux 25.1 or later ([Rust :heart: Emacs](https://github.com/wilfred/remacs) compatible)
 
@@ -9,24 +9,22 @@ My init.el ideal is ["Simple, slim and sleek, yet powerful"](http://scribes.sour
 
 This init.el targets Windows emacs or GNU/Linux emacs. Based on [gnupack](http://gnupack.osdn.jp/docs/latest/UsersGuide.html)'s init.el, I added following packages to work without gnupack, because gnupack is a large package to install on poor storage (eMMC 32gb) netbooks with latex system. Almost all codes are derived from many emacs sensei on the web.
 
-- ddskk (and SKK-JISYO.L), skk-azik compatible.
-- flatui
-- helm
-- hiwin-mode
-- magit
-- migemo (and cmigemo)
-- org-license
-- powerline
-- twittering-mode
-- yasnippet
-- yasnippet-snippets
-- yatex
-- xah-lookup
-- emms (comment out on Windows)
-- mew (for Linux)
-- navi2ch (comment out on Windows)
-- smart-newline (for Windows)
-- wanderlust (for Windows)
+- [ddskk](https://github.com/skk-dev/ddskk/) (and [SKK-JISYO.L](http://openlab.ring.gr.jp/skk/wiki/wiki.cgi?page=SKK%BC%AD%BD%F1#p7)), skk-azik compatible.
+- [flatui-theme](https://github.com/john2x/flatui-theme.el)
+- [helm](https://github.com/helm/helm)
+- [magit](https://github.com/magit/magit)
+- [migemo](https://github.com/emacs-jp/migemo) (and cmigemo)
+- [smart-mode-line](https://github.com/Malabarba/smart-mode-line)
+- [switch-window](https://github.com/dimitri/switch-window)
+- [twittering-mode](https://github.com/hayamiz/twittering-mode)
+- [wordcount-mode](https://github.com/bnbeckwith/wc-mode)
+- [xah-lookup](https://github.com/xahlee/lookup-word-on-internet)
+- [yasnippet](https://github.com/joaotavora/yasnippet)
+- [yasnippet-snippets](https://github.com/AndreaCrotti/yasnippet-snippets)
+- [yatex](https://www.yatex.org/)
+- [mew](https://github.com/kazu-yamamoto/Mew) (for Linux)
+- [navi2ch](https://github.com/naota/navi2ch) (comment out on Windows)
+- [wanderlust](https://github.com/wanderlust/wanderlust) (for Windows)
 - likemc enables dired to behave as a two panel file manager (e.g., [mc](https://github.com/MidnightCommander/mc))
 - mewconf and org-feed are personal settings of e-mail and RSS.
 
@@ -53,8 +51,12 @@ This init works well on an old netbook (such as Thinkpad X121e, which passmark c
 - "C-x i n" yas-new-snippet
 - "C-x i v" yas-visit-snippet-file
 
-##### window switching
+##### switching windows
 - "C-t" works as "C-x o"
+- "C-x o" launches [switch-window](https://github.com/dimitri/switch-window)
+
+##### launch wordcount-mode
+- "C-c w"
 
 ### Install
 - Put init.el, environment, elisp, conf, and org into the .emacs.d.
@@ -63,10 +65,13 @@ This init works well on an old netbook (such as Thinkpad X121e, which passmark c
   + When you use Windows, put [SKK-JISYO.L](http://openlab.ring.gr.jp/skk/wiki/wiki.cgi?page=SKK%BC%AD%BD%F1#p7) and [dict folder (in cmigemo)](https://www.kaoriya.net/software/cmigemo/) to your home directory.
   + mew, twittering-mode and wanderlust requires additional individual settings (registering gmail imap, OAuth, etc).
   + mew requires additional certs files. Download it from https://mew.org/Release/, extract it and rename as ".certs" then put it your home directory.
-- When you use linux, install "Source Han Sans Code-JP" fonts.
+- When you use linux, install "Source Han Code-JP" fonts.
 - If you want to use skk-azik, put .skk to your home directory.
   + Edit .skk when you use US keyboards.
 - Enjoy.
+
+### TIPS for [wordcount-mode](https://github.com/bnbeckwith/wc-mode)
+- If you mainly use two bytes chars (such as Chinese, Japanese, and Korean), open the `~/.emacs.d/elpa/wc-mode` folder, then remove **wc-mode.elc**. Open **wc-mode.el**, edit `WC[%W%w/%tw]` (word count mode) to `WC[%C%c/%tc]` (character count mode).
 
 ### init.el for Windows Subsystem for Linux (WSL, previously called "bash on ubuntu on windows")
 last update: May 10, 2018.
