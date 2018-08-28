@@ -472,8 +472,10 @@
 ;; skk sticky-key
 ; win
 ;(setq skk-sticky-key [non-convert])
-; linux
+;; linux, jp keyboard
 ;(setq skk-sticky-key [muhenkan])
+;; linux, us keyboard
+;(setq skk-sticky-key [f12])
 
 ;; skk kutouten
 (setq-default skk-kutouten-type 'jp-en)
