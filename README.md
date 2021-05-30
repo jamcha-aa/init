@@ -84,3 +84,14 @@ I made an another version of init.el (in buw folder) for WSL. This version conta
 - Put init.el, environment, elisp, conf, and org into your .emacs.d.
 - Install packages.
 - Enjoy.
+
+### init.el for antiX Linux
+release date: May 30, 2021.
+
+This init.el is made for a :heart: [antiX Magic](https://antixlinux.com/) :heart: environment. This version contains skk, magit, and wc-mode.
+
+#### Usage
+- Install fonts-noto-cjk-extra fonts.
+- Download SKK-JISYO.L from the [official website](https://github.com/skk-dev/dict/blob/master/SKK-JISYO.L) and put it into .emacs.d directory.
+- Install ddskk, magit, wc-mode.
+- Enjoy.
