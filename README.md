@@ -85,13 +85,13 @@ I made an another version of init.el (in buw folder) for WSL. This version conta
 - Install packages.
 - Enjoy.
 
-### init.el for antiX Linux
+### minimal setup for writing
 release date: May 30, 2021.
 
-This init.el is made for a :heart: [antiX Magic](https://antixlinux.com/) :heart: environment. This version contains skk, magit, and wc-mode.
+If you don't have 10 minutes for setup, this is just for you. This version contains only skk, magit, and wc-mode.
 
 #### Usage
-- Install fonts-noto-cjk-extra fonts.
+- Install Noto CJK fonts (Debian: fonts-noto-cjk, Arch: noto-fonts-cjk).
 - Download SKK-JISYO.L from the [official website](https://github.com/skk-dev/dict/blob/master/SKK-JISYO.L) and put it into .emacs.d directory.
 - Install ddskk, magit, wc-mode.
 - Enjoy.
